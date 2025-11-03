@@ -24,6 +24,9 @@ jobs:
           pandoc andrei_cv_package/CV_Andrei_Rusnac_ATS.md -o pdfs/CV_Andrei_Rusnac_ATS.pdf --pdf-engine=xelatex
           pandoc andrei_cv_package/CV_Andrei_Rusnac_Visual.md -o pdfs/CV_Andrei_Rusnac_Visual.pdf --pdf-engine=xelatex
 
+      - name: List generated PDFs
+        run: ls -l pdfs
+        
       - name: Publish PDFs to gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
