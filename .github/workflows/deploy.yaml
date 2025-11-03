@@ -38,10 +38,16 @@ jobs:
       - name: Install dependencies
         run: |
           npm ci
+      
+      - name: Confirm PDFs are present
+        run: ls -l andrei_cv_package/*.pdf || echo "PDFs missing!"
 
-      - name: Build
+      - name: Build site
         run: |
           npm run build
+
+      - name: Verify build output
+        run: ls -l dist || echo "dist not found"
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
