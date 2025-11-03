@@ -32,7 +32,7 @@ jobs:
           else
             git checkout --orphan gh-pages
           fi
-          cp ../pdfs/*.pdf .
+          cp pdfs/*.pdf .
           touch .nojekyll
           git add *.pdf
           git commit -m "chore: update CV PDFs"
