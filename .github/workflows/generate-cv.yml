@@ -23,25 +23,17 @@ jobs:
           mkdir -p pdfs
           pandoc andrei_cv_package/CV_Andrei_Rusnac_ATS.md -o pdfs/CV_Andrei_Rusnac_ATS.pdf --pdf-engine=xelatex
           pandoc andrei_cv_package/CV_Andrei_Rusnac_Visual.md -o pdfs/CV_Andrei_Rusnac_Visual.pdf --pdf-engine=xelatex
-
-      - name: Prepare publish folder
-        run: |
-          mkdir publish
-          cp pdfs/*.pdf publish/
-          touch publish/.nojekyll
-          ls -l publish
-
-      - name: Manual publish
-        run: |
+          touch pdfs/.nojekyll
+          ls -l pdfs
+          tree .
           git fetch origin gh-pages || true
           if git rev-parse --verify origin/gh-pages >/dev/null 2>&1; then
             git checkout gh-pages
           else
             git checkout --orphan gh-pages
           fi
-          rm -rf *
           cp ../pdfs/*.pdf .
           touch .nojekyll
-          git add .
+          git add *.pdf
           git commit -m "chore: update CV PDFs"
           git push origin HEAD:gh-pages
