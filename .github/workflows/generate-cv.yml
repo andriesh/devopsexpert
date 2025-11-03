@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Install Pandoc
-        run: sudo apt-get update && sudo apt-get install -y pandoc texlive-xetex
+        run: sudo apt-get update && sudo apt-get install -y pandoc texlive-xetex tree
 
       - name: Generate PDFs
         run: |
@@ -26,10 +26,11 @@ jobs:
 
       - name: List generated PDFs
         run: ls -l pdfs
-        
+
       - name: Publish PDFs to gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
           publish_dir: pdfs
+          keep_files: true
