@@ -6,7 +6,7 @@ on:
     paths:
       - "react_portofolio/**"
       - "andrei_cv_package/**"
-      - ".github/workflows/**"
+      # - ".github/workflows/**"
   
   workflow_run:
     workflows: ["Generate CVs"]

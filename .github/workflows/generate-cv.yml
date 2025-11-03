@@ -20,13 +20,13 @@ jobs:
 
       - name: Generate PDFs
         run: |
-          pandoc andrei_cv_package/CV_Andrei_Rusnac_ATS.md -o CV_Andrei_Rusnac_ATS.pdf --pdf-engine=xelatex
-          pandoc andrei_cv_package/CV_Andrei_Rusnac_Visual.md -o CV_Andrei_Rusnac_Visual.pdf --pdf-engine=xelatex
+          mkdir -p pdfs
+          pandoc andrei_cv_package/CV_Andrei_Rusnac_ATS.md -o pdfs/CV_Andrei_Rusnac_ATS.pdf --pdf-engine=xelatex
+          pandoc andrei_cv_package/CV_Andrei_Rusnac_Visual.md -o pdfs/CV_Andrei_Rusnac_Visual.pdf --pdf-engine=xelatex
 
-      - name: Commit updated PDFs
-        run: |
-          git config user.name "GitHub Actions"
-          git config user.email "actions@github.com"
-          git add *.pdf
-          git commit -m "Update PDFs from Markdown" || echo "No changes"
-          git push
+      - name: Publish PDFs to gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: pdfs
