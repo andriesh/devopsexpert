@@ -27,6 +27,6 @@ jobs:
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
-          git add andrei_cv_package/*.pdf
+          git add *.pdf
           git commit -m "Update PDFs from Markdown" || echo "No changes"
           git push
