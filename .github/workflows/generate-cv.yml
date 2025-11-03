@@ -5,6 +5,7 @@ on:
     branches: [ main ]
     paths:
       - "andrei_cv_package/**/*.md"
+      - ".github/workflows/generate-cv.yml"
 
 permissions:
   contents: write
