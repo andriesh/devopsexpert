@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Add a CSS token for royal blue used in components */
+:root {
+  --royal: #0B57D0;
+}
+.bg-royal { background-color: var(--royal); }
+.text-royal { color: var(--royal); }
