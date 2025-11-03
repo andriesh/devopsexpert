@@ -25,12 +25,12 @@ jobs:
           pandoc andrei_cv_package/CV_Andrei_Rusnac_Visual.md -o pdfs/CV_Andrei_Rusnac_Visual.pdf --pdf-engine=xelatex
 
       - name: List generated PDFs
-        run: ls -l pdfs
+        run: ls -l pdfs && pwd
 
       - name: Publish PDFs to gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
-          publish_dir: pdfs
+          publish_dir: ${{ github.workspace }}/pdfs
           keep_files: true
