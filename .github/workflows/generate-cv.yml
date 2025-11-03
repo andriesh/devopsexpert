@@ -4,7 +4,7 @@ on:
   push:
     branches: [ main ]
     paths:
-      - "CV_*.md"
+      - "andrei_cv_package/**/*.md"
 
 permissions:
   contents: write
@@ -16,10 +16,12 @@ jobs:
       - uses: actions/checkout@v4
       - name: Install Pandoc
         run: sudo apt-get update && sudo apt-get install -y pandoc texlive-xetex
+
       - name: Generate PDFs
         run: |
-          pandoc CV_Andrei_Rusnac_ATS.md -o andrei_cv_package/CV_Andrei_Rusnac_ATS.pdf --pdf-engine=xelatex
-          pandoc CV_Andrei_Rusnac_Visual.md -o andrei_cv_package/CV_Andrei_Rusnac_Visual.pdf --pdf-engine=xelatex
+          pandoc andrei_cv_package/CV_Andrei_Rusnac_ATS.md -o andrei_cv_package/CV_Andrei_Rusnac_ATS.pdf --pdf-engine=xelatex
+          pandoc andrei_cv_package/CV_Andrei_Rusnac_Visual.md -o andrei_cv_package/CV_Andrei_Rusnac_Visual.pdf --pdf-engine=xelatex
+
       - name: Commit updated PDFs
         run: |
           git config user.name "GitHub Actions"
