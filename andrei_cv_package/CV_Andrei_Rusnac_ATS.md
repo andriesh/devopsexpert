@@ -2,7 +2,7 @@
 **DevOps & SRE Engineer • Platform Engineer**
 
 Location: Chișinău, Moldova  
-Phone: +373 694 41086  
+Phone: +373 69441086  
 Email: andriesh.rusnac@gmail.com  
 LinkedIn: https://www.linkedin.com/in/andrieshrusnac/  
 Credly: https://www.credly.com/users/andriesh/
@@ -57,8 +57,8 @@ Seasoned DevOps / SRE / Platform Engineer focused on building reliable, observab
 ---
 
 ## Certifications (selected)
-- CNCF: KCSA, KCNA, CKA, CKAD, CKS, Kubestronaut
-- PCA, CAPA, ICA (CNCF IDs available)
+- CNCF: Kubestronaut, KCSA, KCNA, CKA, CKAD, CKS
+- PCA, CAPA, ICA, CNPA (CNCF IDs available)
 - CCNA (Cisco), CCNA Security, CCNA Wireless
 - LPIC-1
 
