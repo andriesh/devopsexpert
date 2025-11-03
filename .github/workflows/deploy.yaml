@@ -40,7 +40,7 @@ jobs:
           npm ci
       
       - name: Confirm PDFs are present
-        run: ls -l andrei_cv_package/*.pdf || echo "PDFs missing!"
+        run: ls -l dist/*.pdf || echo "PDFs missing!"
 
       - name: Build site
         run: |
