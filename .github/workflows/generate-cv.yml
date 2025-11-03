@@ -35,5 +35,7 @@ jobs:
           cp pdfs/*.pdf .
           touch .nojekyll
           git add *.pdf
+          git config --global user.email "bot@github.com"
+          git config --global user.name "GitHub Bot"
           git commit -m "chore: update CV PDFs"
           git push origin HEAD:gh-pages
