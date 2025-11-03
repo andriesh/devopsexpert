@@ -77,3 +77,4 @@ Seasoned DevOps / SRE / Platform Engineer focused on building reliable, observab
 
 ## Contact
 andriesh.rusnac@gmail.com · +373 694 41086 · https://www.linkedin.com/in/andrieshrusnac/
+
