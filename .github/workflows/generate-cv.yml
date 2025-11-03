@@ -31,11 +31,17 @@ jobs:
           touch publish/.nojekyll
           ls -l publish
 
-      - name: Publish PDFs to gh-pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: gh-pages
-          publish_dir: publish
-          keep_files: true
-          commit_message: "chore: update generated CV PDFs"
+      - name: Manual publish
+        run: |
+          git fetch origin gh-pages || true
+          if git rev-parse --verify origin/gh-pages >/dev/null 2>&1; then
+            git checkout gh-pages
+          else
+            git checkout --orphan gh-pages
+          fi
+          rm -rf *
+          cp ../pdfs/*.pdf .
+          touch .nojekyll
+          git add .
+          git commit -m "chore: update CV PDFs"
+          git push origin HEAD:gh-pages
