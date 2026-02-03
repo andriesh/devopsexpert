@@ -6,6 +6,7 @@ on:
     paths:
       - "react_portofolio/**"
       - "andrei_cv_package/**"
+      - ".github/workflows/**"
   
   workflow_run:
     workflows: ["Generate CVs"]
@@ -25,7 +26,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: devopsexpert
+        working-directory: .
 
     steps:
       - uses: actions/checkout@v4
@@ -38,16 +39,17 @@ jobs:
           node-version: '20'
 
       - name: Install dependencies
-        working-directory: react_portofolio
+        working-directory: devopsexpert/react_portofolio
         run: npm install
       
       - name: Build React site
-        working-directory: react_portofolio
+        working-directory: devopsexpert/react_portofolio
         env:
           GITHUB_PAGES: 'true'
         run: npm run build
 
       - name: Copy CV files to dist
+        working-directory: devopsexpert
         run: |
           # Copy CV PDFs if they exist
           if [ -f "andrei_cv_package/CV_Andrei_Rusnac_Visual.pdf" ]; then
@@ -62,6 +64,6 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: react_portofolio/dist
+          publish_dir: devopsexpert/react_portofolio/dist
           cname: andriesh.dev
 
