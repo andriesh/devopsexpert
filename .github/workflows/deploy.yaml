@@ -6,22 +6,26 @@ on:
     paths:
       - "react_portofolio/**"
       - "andrei_cv_package/**"
-      # - ".github/workflows/**"
   
   workflow_run:
     workflows: ["Generate CVs"]
     types:
       - completed
+  
+  # Allow manual trigger
+  workflow_dispatch:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: react_portofolio
+        working-directory: devopsexpert
 
     steps:
       - uses: actions/checkout@v4
@@ -33,24 +37,34 @@ jobs:
         with:
           node-version: '20'
           cache: 'npm'
-          cache-dependency-path: react_portofolio/package-lock.json
+          cache-dependency-path: devopsexpert/react_portofolio/package-lock.json
 
       - name: Install dependencies
-        run: |
-          npm ci
+        working-directory: devopsexpert/react_portofolio
+        run: npm ci
       
-      - name: Confirm PDFs are present
-        run: ls -l dist/*.pdf || echo "PDFs missing!"
+      - name: Build React site
+        working-directory: devopsexpert/react_portofolio
+        env:
+          GITHUB_PAGES: 'true'
+        run: npm run build
 
-      - name: Build site
+      - name: Copy CV files to dist
+        working-directory: devopsexpert
         run: |
-          npm run build
-
-      - name: Verify build output
-        run: ls -l dist || echo "dist not found"
+          # Copy CV PDFs if they exist
+          if [ -f "andrei_cv_package/CV_Andrei_Rusnac_Visual.pdf" ]; then
+            cp andrei_cv_package/CV_Andrei_Rusnac_Visual.pdf react_portofolio/dist/
+          fi
+          if [ -f "andrei_cv_package/CV_Andrei_Rusnac_ATS.pdf" ]; then
+            cp andrei_cv_package/CV_Andrei_Rusnac_ATS.pdf react_portofolio/dist/
+          fi
+          ls -la react_portofolio/dist/
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: react_portofolio/dist
+          publish_dir: devopsexpert/react_portofolio/dist
+          cname: andriesh.dev
+
