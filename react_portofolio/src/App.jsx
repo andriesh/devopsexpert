@@ -65,7 +65,7 @@ export default function App() {
         <div className="absolute bottom-20 left-20 w-[300px] h-[300px] rounded-full" style={{ background: 'radial-gradient(circle, rgba(202,76,59,0.2) 0%, transparent 70%)', filter: 'blur(50px)' }}></div>
         
         <div className="max-w-5xl mx-auto px-8 relative z-10">
-          <h2 className="text-5xl font-black text-white mb-4">CORE COMPETENCIES</h2>
+          <h2 className="text-5xl font-black mb-4" style={{ color: '#f5ebe0' }}>CORE COMPETENCIES</h2>
           <div className="w-32 h-2 rounded-full mb-16" style={{ background: 'linear-gradient(90deg, #d9ac6f, #f28f49)' }}></div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -134,7 +134,7 @@ export default function App() {
         <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] rounded-full" style={{ background: 'radial-gradient(circle, rgba(217,172,111,0.15) 0%, transparent 70%)', filter: 'blur(80px)' }}></div>
         
         <div className="max-w-5xl mx-auto px-8 relative z-10">
-          <h2 className="text-5xl font-black text-white mb-4">EDUCATION & CERTIFICATIONS</h2>
+          <h2 className="text-5xl font-black mb-4" style={{ color: '#f5ebe0' }}>EDUCATION & CERTIFICATIONS</h2>
           <div className="w-32 h-2 rounded-full mb-16" style={{ background: 'linear-gradient(90deg, #d9ac6f, #a86046)' }}></div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -196,8 +196,8 @@ export default function App() {
 
 function CompetencyCard({ title, skills, gradient }) {
   return (
-    <div className="p-8 rounded-2xl transition-all duration-300 hover:scale-105" style={{ background: 'rgba(255,255,255,0.05)', border: '2px solid rgba(217,172,111,0.3)', backdropFilter: 'blur(10px)' }}>
-      <h3 className="text-2xl font-black text-white mb-8">{title}</h3>
+    <div className="p-8 rounded-2xl transition-all duration-300 hover:scale-105" style={{ background: 'rgba(255,255,255,0.08)', border: '2px solid rgba(217,172,111,0.4)', backdropFilter: 'blur(10px)' }}>
+      <h3 className="text-2xl font-black mb-8" style={{ color: '#f5ebe0' }}>{title}</h3>
       <div className="flex flex-wrap gap-3">
         {skills.map(skill => (
           <span key={skill} className="px-5 py-3 rounded-full font-bold text-sm text-white" style={{ background: gradient }}>
@@ -234,9 +234,9 @@ function ExperienceCard({ position, company, period, description, achievements, 
 
 function StatCard({ number, label }) {
   return (
-    <div className="p-10 rounded-2xl bg-white/10 backdrop-blur text-center">
-      <p className="text-6xl font-black text-white mb-3">{number}</p>
-      <p className="text-[#f5ebe0] font-bold text-lg">{label}</p>
+    <div className="p-10 rounded-2xl bg-white/15 backdrop-blur text-center">
+      <p className="text-6xl font-black mb-3" style={{ color: '#ffffff' }}>{number}</p>
+      <p className="font-bold text-lg" style={{ color: '#fff8f0' }}>{label}</p>
     </div>
   )
 }
