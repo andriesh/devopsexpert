@@ -2,205 +2,204 @@ import React from 'react'
 
 export default function App() {
   return (
-    <div className="min-h-screen">
-      {/* Hero Section with full gradient background */}
-      <header className="relative min-h-screen flex items-center" style={{ background: 'linear-gradient(135deg, #0f0b09 0%, #1a1410 30%, #2d1f14 60%, #3d2a1a 100%)' }}>
-        {/* Decorative gradient circles */}
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full" style={{ background: 'radial-gradient(circle, rgba(242,143,73,0.4) 0%, transparent 70%)', filter: 'blur(60px)' }}></div>
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full" style={{ background: 'radial-gradient(circle, rgba(202,76,59,0.3) 0%, transparent 70%)', filter: 'blur(80px)' }}></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full" style={{ background: 'radial-gradient(circle, rgba(217,172,111,0.15) 0%, transparent 60%)', filter: 'blur(100px)' }}></div>
-
-        <div className="relative max-w-6xl mx-auto px-8 py-20 z-10">
-          <p className="text-[#f28f49] font-mono text-sm font-bold mb-6 tracking-[0.3em] uppercase">Welcome to my portfolio</p>
-          <h1 className="text-8xl font-black mb-8 leading-none tracking-tight">
-            <span className="text-white">Andrei</span><br/>
-            <span style={{ background: 'linear-gradient(90deg, #f28f49, #ca4c3b, #d9ac6f)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Rusnac</span>
-          </h1>
-          <p className="text-3xl text-[#d9ac6f] font-light mb-4">DevOps Engineer • SRE • Platform Architect</p>
-          <p className="text-xl text-[#a86046] max-w-xl leading-relaxed mb-12">Building scalable cloud-native infrastructure with reliability, observability, and automation at its core</p>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-wrap gap-6 mb-16">
-            <a href="/CV_Andrei_Rusnac_Visual.pdf" className="group px-10 py-5 font-bold text-lg rounded-xl inline-flex items-center gap-3 transition-all duration-300 hover:scale-105" style={{ background: 'linear-gradient(135deg, #f28f49 0%, #ca4c3b 100%)', color: 'white', boxShadow: '0 20px 40px rgba(242,143,73,0.3)' }}>
-              <span>📄</span> Download Visual CV
-            </a>
-            <a href="/CV_Andrei_Rusnac_ATS.pdf" className="px-10 py-5 border-2 border-[#d9ac6f] text-[#d9ac6f] font-bold text-lg rounded-xl hover:bg-[#d9ac6f]/10 transition-all duration-300 inline-flex items-center gap-3">
-              <span>📋</span> Download ATS CV
-            </a>
-          </div>
-
-          {/* Contact Links */}
-          <div className="flex flex-wrap gap-8 pt-8 border-t border-[#a86046]/30">
-            <a href="mailto:your-email@example.com" className="text-[#d9ac6f] hover:text-[#f28f49] transition font-mono text-sm flex items-center gap-3">
-              <span className="text-xl">📧</span> andrei@example.com
-            </a>
-            <a href="https://www.linkedin.com/in/andrieshrusnac/" target="_blank" rel="noreferrer" className="text-[#d9ac6f] hover:text-[#f28f49] transition font-mono text-sm flex items-center gap-3">
-              <span className="text-xl">💼</span> LinkedIn
-            </a>
-            <a href="https://www.credly.com/users/andriesh/" target="_blank" rel="noreferrer" className="text-[#d9ac6f] hover:text-[#f28f49] transition font-mono text-sm flex items-center gap-3">
-              <span className="text-xl">🏆</span> Credly
-            </a>
+    <div className="min-h-screen font-sans">
+      {/* Hero Section - Dark with gradient orbs */}
+      <header className="relative min-h-screen flex items-center overflow-hidden" style={{ background: '#0f0b09' }}>
+        {/* Large gradient orb top-right */}
+        <div className="absolute -top-40 -right-40 w-[700px] h-[700px] rounded-full opacity-60" style={{ background: 'radial-gradient(circle, #f28f49 0%, #ca4c3b 40%, transparent 70%)' }}></div>
+        {/* Smaller orb bottom-left */}
+        <div className="absolute -bottom-20 -left-20 w-[400px] h-[400px] rounded-full opacity-40" style={{ background: 'radial-gradient(circle, #d9ac6f 0%, #a86046 50%, transparent 70%)' }}></div>
+        
+        <div className="relative max-w-6xl mx-auto px-8 py-20 z-10 w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <p className="font-mono text-sm tracking-[0.25em] uppercase mb-6" style={{ color: '#f28f49' }}>DevOps Engineer & SRE</p>
+              <h1 className="text-7xl lg:text-8xl font-black leading-none mb-8" style={{ color: '#f5ebe0' }}>
+                ANDREI<br/>RUSNAC
+              </h1>
+              <p className="text-xl leading-relaxed mb-10 max-w-md" style={{ color: '#d9ac6f' }}>
+                Building scalable cloud-native infrastructure with reliability and automation at its core.
+              </p>
+              
+              {/* Buttons */}
+              <div className="flex flex-wrap gap-4">
+                <a href="/CV_Andrei_Rusnac_Visual.pdf" className="px-8 py-4 font-mono font-bold text-sm uppercase tracking-wider rounded-full transition-all hover:scale-105" style={{ background: 'linear-gradient(135deg, #f28f49, #ca4c3b)', color: '#0f0b09' }}>
+                  Download CV
+                </a>
+                <a href="https://www.linkedin.com/in/andrieshrusnac/" target="_blank" rel="noreferrer" className="px-8 py-4 font-mono font-bold text-sm uppercase tracking-wider rounded-full border-2 transition-all hover:scale-105" style={{ borderColor: '#d9ac6f', color: '#d9ac6f' }}>
+                  LinkedIn
+                </a>
+              </div>
+            </div>
+            
+            {/* Right side - decorative element */}
+            <div className="hidden lg:flex justify-center items-center">
+              <div className="relative w-80 h-80 rounded-full flex items-center justify-center" style={{ background: 'linear-gradient(135deg, rgba(242,143,73,0.2), rgba(202,76,59,0.1))' }}>
+                <div className="w-60 h-60 rounded-full flex items-center justify-center" style={{ background: 'linear-gradient(135deg, rgba(217,172,111,0.3), rgba(168,96,70,0.2))' }}>
+                  <span className="text-8xl">🚀</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </header>
 
-      {/* Professional Summary Section */}
-      <section className="relative py-32" style={{ background: 'linear-gradient(180deg, #f5ebe0 0%, #faf6f1 50%, #fff8f0 100%)' }}>
-        <div className="absolute top-0 left-0 w-full h-32" style={{ background: 'linear-gradient(180deg, #0f0b09 0%, transparent 100%)' }}></div>
-        <div className="max-w-5xl mx-auto px-8 relative z-10">
-          <h2 className="text-5xl font-black text-[#1a1410] mb-4">PROFESSIONAL SUMMARY</h2>
-          <div className="w-32 h-2 rounded-full mb-12" style={{ background: 'linear-gradient(90deg, #f28f49, #ca4c3b)' }}></div>
-          <div className="p-12 rounded-3xl" style={{ background: 'linear-gradient(135deg, #fff 0%, #fdf8f3 100%)', boxShadow: '0 30px 60px rgba(168,96,70,0.15)', border: '3px solid #d9ac6f' }}>
-            <p className="text-xl text-[#3d2a1a] leading-relaxed">
-              Experienced DevOps and SRE engineer with a proven track record of designing and implementing scalable, secure, and observable cloud-native infrastructure. Specialized in Kubernetes orchestration, infrastructure-as-code, and building reliable platform engineering solutions. Passionate about automation, observability, and creating robust systems that enable teams to scale efficiently.
-            </p>
+      {/* About Section - Cream background */}
+      <section className="py-32 relative" style={{ background: 'linear-gradient(180deg, #f5ebe0 0%, #ede4d8 100%)' }}>
+        <div className="max-w-5xl mx-auto px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            <div className="lg:col-span-1">
+              <p className="font-mono text-sm tracking-[0.25em] uppercase mb-4" style={{ color: '#ca4c3b' }}>About Me</p>
+              <h2 className="text-4xl font-black" style={{ color: '#0f0b09' }}>WHO<br/>I AM</h2>
+            </div>
+            <div className="lg:col-span-2">
+              <p className="text-xl leading-relaxed" style={{ color: '#3d2a1a' }}>
+                Experienced DevOps and SRE engineer with a proven track record of designing and implementing scalable, secure, and observable cloud-native infrastructure. Specialized in Kubernetes orchestration, infrastructure-as-code, and building reliable platform engineering solutions.
+              </p>
+              <div className="flex gap-6 mt-10">
+                <a href="mailto:your-email@example.com" className="font-mono text-sm hover:underline" style={{ color: '#a86046' }}>📧 Email</a>
+                <a href="https://www.credly.com/users/andriesh/" target="_blank" rel="noreferrer" className="font-mono text-sm hover:underline" style={{ color: '#a86046' }}>🏆 Credly</a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Core Competencies Section */}
-      <section className="relative py-32" style={{ background: 'linear-gradient(135deg, #1a1410 0%, #2d1f14 50%, #3d2a1a 100%)' }}>
-        {/* Decorative elements */}
-        <div className="absolute top-20 right-20 w-[400px] h-[400px] rounded-full" style={{ background: 'radial-gradient(circle, rgba(242,143,73,0.2) 0%, transparent 70%)', filter: 'blur(60px)' }}></div>
-        <div className="absolute bottom-20 left-20 w-[300px] h-[300px] rounded-full" style={{ background: 'radial-gradient(circle, rgba(202,76,59,0.2) 0%, transparent 70%)', filter: 'blur(50px)' }}></div>
+      {/* Skills Section - Dark */}
+      <section className="py-32 relative overflow-hidden" style={{ background: '#0f0b09' }}>
+        {/* Decorative orb */}
+        <div className="absolute top-1/2 -right-40 w-[500px] h-[500px] rounded-full opacity-30 -translate-y-1/2" style={{ background: 'radial-gradient(circle, #f28f49 0%, transparent 70%)' }}></div>
         
         <div className="max-w-5xl mx-auto px-8 relative z-10">
-          <h2 className="text-5xl font-black mb-4" style={{ color: '#f5ebe0' }}>CORE COMPETENCIES</h2>
-          <div className="w-32 h-2 rounded-full mb-16" style={{ background: 'linear-gradient(90deg, #d9ac6f, #f28f49)' }}></div>
+          <p className="font-mono text-sm tracking-[0.25em] uppercase mb-4" style={{ color: '#f28f49' }}>What I Do</p>
+          <h2 className="text-5xl font-black mb-16" style={{ color: '#f5ebe0' }}>SKILLS</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <CompetencyCard
-              title="Cloud & Infrastructure"
-              skills={['Kubernetes', 'Docker', 'AWS', 'Terraform', 'Ansible']}
-              gradient="linear-gradient(135deg, #f28f49 0%, #ca4c3b 100%)"
-            />
-            <CompetencyCard
-              title="Observability & Monitoring"
-              skills={['Prometheus', 'Grafana', 'ELK Stack', 'Jaeger', 'Datadog']}
-              gradient="linear-gradient(135deg, #ca4c3b 0%, #a86046 100%)"
-            />
-            <CompetencyCard
-              title="CI/CD & Automation"
-              skills={['GitLab CI', 'GitHub Actions', 'Jenkins', 'ArgoCD', 'Helm']}
-              gradient="linear-gradient(135deg, #d9ac6f 0%, #f28f49 100%)"
-            />
-            <CompetencyCard
-              title="Tools & Platforms"
-              skills={['Linux', 'Git', 'Python', 'Bash', 'Nginx']}
-              gradient="linear-gradient(135deg, #a86046 0%, #d9ac6f 100%)"
-            />
+            <SkillCard title="Cloud & Infrastructure" skills={['Kubernetes', 'Docker', 'AWS', 'Terraform', 'Ansible']} />
+            <SkillCard title="Observability" skills={['Prometheus', 'Grafana', 'ELK Stack', 'Jaeger', 'Datadog']} />
+            <SkillCard title="CI/CD & Automation" skills={['GitLab CI', 'GitHub Actions', 'Jenkins', 'ArgoCD', 'Helm']} />
+            <SkillCard title="Tools & Languages" skills={['Linux', 'Git', 'Python', 'Bash', 'Nginx']} />
           </div>
         </div>
       </section>
 
-      {/* Experience Section */}
-      <section className="relative py-32" style={{ background: 'linear-gradient(180deg, #fff8f0 0%, #f5ebe0 50%, #ede4d8 100%)' }}>
+      {/* Experience Section - Cream with cards */}
+      <section className="py-32" style={{ background: 'linear-gradient(180deg, #ede4d8 0%, #f5ebe0 100%)' }}>
         <div className="max-w-5xl mx-auto px-8">
-          <h2 className="text-5xl font-black text-[#1a1410] mb-4">PROFESSIONAL EXPERIENCE</h2>
-          <div className="w-32 h-2 rounded-full mb-16" style={{ background: 'linear-gradient(90deg, #ca4c3b, #f28f49)' }}></div>
+          <p className="font-mono text-sm tracking-[0.25em] uppercase mb-4" style={{ color: '#ca4c3b' }}>Career</p>
+          <h2 className="text-5xl font-black mb-16" style={{ color: '#0f0b09' }}>EXPERIENCE</h2>
           
-          <div className="space-y-10">
+          <div className="space-y-8">
             <ExperienceCard
               position="Senior DevOps Engineer"
               company="Company Name"
-              period="2023 - Present"
-              description="Led infrastructure modernization and cloud-native transformation initiatives. Designed and implemented Kubernetes clusters supporting 50+ microservices. Reduced deployment time by 60% through CI/CD optimization."
-              achievements={[
+              period="2023 — Present"
+              points={[
+                'Led infrastructure modernization and cloud-native transformation',
                 'Architected multi-region Kubernetes infrastructure',
-                'Implemented comprehensive observability solution with Prometheus + Grafana',
-                'Reduced infrastructure costs by 40% through optimization'
+                'Reduced deployment time by 60% through CI/CD optimization',
+                'Reduced infrastructure costs by 40%'
               ]}
-              accentColor="#f28f49"
             />
             <ExperienceCard
               position="DevOps Engineer"
               company="Previous Company"
-              period="2021 - 2023"
-              description="Managed infrastructure-as-code deployments using Terraform and Ansible. Implemented monitoring and alerting strategies across the organization."
-              achievements={[
+              period="2021 — 2023"
+              points={[
+                'Managed IaC deployments using Terraform and Ansible',
                 'Automated 90% of manual deployment processes',
                 'Established disaster recovery procedures with RPO < 1 hour',
-                'Mentored 3 junior engineers in DevOps practices'
+                'Mentored junior engineers in DevOps practices'
               ]}
-              accentColor="#ca4c3b"
             />
           </div>
         </div>
       </section>
 
-      {/* Education & Certifications Section */}
-      <section className="relative py-32" style={{ background: 'linear-gradient(135deg, #2d1f14 0%, #1a1410 50%, #0f0b09 100%)' }}>
-        {/* Decorative elements */}
-        <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] rounded-full" style={{ background: 'radial-gradient(circle, rgba(217,172,111,0.15) 0%, transparent 70%)', filter: 'blur(80px)' }}></div>
+      {/* Certifications Section - Dark with gradient accent */}
+      <section className="py-32 relative overflow-hidden" style={{ background: '#0f0b09' }}>
+        {/* Gradient bar */}
+        <div className="absolute top-0 left-0 w-full h-2" style={{ background: 'linear-gradient(90deg, #f28f49, #ca4c3b, #d9ac6f)' }}></div>
+        {/* Decorative orb */}
+        <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] rounded-full opacity-20" style={{ background: 'radial-gradient(circle, #d9ac6f 0%, transparent 70%)' }}></div>
         
         <div className="max-w-5xl mx-auto px-8 relative z-10">
-          <h2 className="text-5xl font-black mb-4" style={{ color: '#f5ebe0' }}>EDUCATION & CERTIFICATIONS</h2>
-          <div className="w-32 h-2 rounded-full mb-16" style={{ background: 'linear-gradient(90deg, #d9ac6f, #a86046)' }}></div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <div className="p-10 rounded-3xl" style={{ background: 'linear-gradient(135deg, rgba(242,143,73,0.1) 0%, rgba(202,76,59,0.05) 100%)', border: '3px solid #d9ac6f' }}>
-              <h3 className="text-3xl font-black text-[#d9ac6f] mb-10">CERTIFICATIONS</h3>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            <div>
+              <p className="font-mono text-sm tracking-[0.25em] uppercase mb-4" style={{ color: '#f28f49' }}>Credentials</p>
+              <h2 className="text-5xl font-black mb-12" style={{ color: '#f5ebe0' }}>CERTIFICATIONS</h2>
+              
               <ul className="space-y-6">
-                <li className="flex items-start gap-4">
-                  <span className="text-3xl">⭐</span>
-                  <span className="text-[#f5ebe0] font-semibold text-lg">Kubernetes Application Developer (CKAD)</span>
-                </li>
-                <li className="flex items-start gap-4">
-                  <span className="text-3xl">⭐</span>
-                  <span className="text-[#f5ebe0] font-semibold text-lg">AWS Certified Solutions Architect</span>
-                </li>
-                <li className="flex items-start gap-4">
-                  <span className="text-3xl">⭐</span>
-                  <span className="text-[#f5ebe0] font-semibold text-lg">Linux Professional Institute (LPI)</span>
-                </li>
+                <CertItem name="Kubernetes Application Developer (CKAD)" />
+                <CertItem name="AWS Certified Solutions Architect" />
+                <CertItem name="Linux Professional Institute (LPI)" />
               </ul>
             </div>
-
-            <div className="p-10 rounded-3xl" style={{ background: 'linear-gradient(135deg, rgba(202,76,59,0.1) 0%, rgba(242,143,73,0.05) 100%)', border: '3px solid #f28f49' }}>
-              <h3 className="text-3xl font-black text-[#f28f49] mb-10">EDUCATION</h3>
-              <ul className="space-y-6">
-                <li className="flex items-start gap-4">
-                  <span className="text-3xl text-[#f28f49]">✓</span>
-                  <span className="text-[#f5ebe0] font-semibold text-lg"><strong className="text-[#f28f49]">Bachelor's Degree</strong> in Computer Science</span>
-                </li>
-                <li className="flex items-start gap-4">
-                  <span className="text-3xl text-[#f28f49]">✓</span>
-                  <span className="text-[#f5ebe0] font-semibold text-lg">Advanced courses in Cloud Architecture</span>
-                </li>
-              </ul>
+            
+            <div>
+              <p className="font-mono text-sm tracking-[0.25em] uppercase mb-4" style={{ color: '#f28f49' }}>Background</p>
+              <h2 className="text-5xl font-black mb-12" style={{ color: '#f5ebe0' }}>EDUCATION</h2>
+              
+              <div className="p-8 rounded-2xl" style={{ background: 'rgba(242,143,73,0.1)', border: '1px solid rgba(217,172,111,0.3)' }}>
+                <h3 className="text-2xl font-bold mb-2" style={{ color: '#f28f49' }}>Bachelor's Degree</h3>
+                <p className="font-mono text-sm mb-4" style={{ color: '#d9ac6f' }}>Computer Science</p>
+                <p style={{ color: '#a86046' }}>Advanced courses in Cloud Architecture and Distributed Systems</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="relative py-24" style={{ background: 'linear-gradient(135deg, #f28f49 0%, #ca4c3b 50%, #a86046 100%)' }}>
+      {/* Stats Banner - Gradient */}
+      <section className="py-20" style={{ background: 'linear-gradient(135deg, #f28f49 0%, #ca4c3b 50%, #a86046 100%)' }}>
         <div className="max-w-5xl mx-auto px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <StatCard number="8+" label="Years Experience" />
-            <StatCard number="50+" label="Microservices Managed" />
-            <StatCard number="40%" label="Cost Optimization" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div>
+              <p className="text-6xl font-black" style={{ color: '#0f0b09' }}>8+</p>
+              <p className="font-mono text-sm uppercase tracking-wider mt-2" style={{ color: '#0f0b09' }}>Years Experience</p>
+            </div>
+            <div>
+              <p className="text-6xl font-black" style={{ color: '#0f0b09' }}>50+</p>
+              <p className="font-mono text-sm uppercase tracking-wider mt-2" style={{ color: '#0f0b09' }}>Microservices</p>
+            </div>
+            <div>
+              <p className="text-6xl font-black" style={{ color: '#0f0b09' }}>40%</p>
+              <p className="font-mono text-sm uppercase tracking-wider mt-2" style={{ color: '#0f0b09' }}>Cost Savings</p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-16" style={{ background: 'linear-gradient(180deg, #1a1410 0%, #0f0b09 100%)' }}>
-        <div className="max-w-5xl mx-auto px-8 text-center">
-          <p className="text-[#a86046] font-mono text-sm">Built with React & Tailwind CSS • Last updated {new Date().toLocaleDateString()}</p>
+      {/* Footer - Cream */}
+      <footer className="py-16" style={{ background: '#f5ebe0' }}>
+        <div className="max-w-5xl mx-auto px-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-8">
+            <div>
+              <h3 className="text-2xl font-black" style={{ color: '#0f0b09' }}>ANDREI RUSNAC</h3>
+              <p className="font-mono text-sm mt-2" style={{ color: '#a86046' }}>DevOps Engineer & SRE</p>
+            </div>
+            <div className="flex gap-6">
+              <a href="/CV_Andrei_Rusnac_Visual.pdf" className="font-mono text-sm uppercase tracking-wider hover:underline" style={{ color: '#ca4c3b' }}>Visual CV</a>
+              <a href="/CV_Andrei_Rusnac_ATS.pdf" className="font-mono text-sm uppercase tracking-wider hover:underline" style={{ color: '#ca4c3b' }}>ATS CV</a>
+              <a href="https://www.linkedin.com/in/andrieshrusnac/" target="_blank" rel="noreferrer" className="font-mono text-sm uppercase tracking-wider hover:underline" style={{ color: '#ca4c3b' }}>LinkedIn</a>
+            </div>
+          </div>
+          <div className="mt-12 pt-8 border-t text-center" style={{ borderColor: '#d9ac6f' }}>
+            <p className="font-mono text-xs" style={{ color: '#a86046' }}>© {new Date().getFullYear()} Andrei Rusnac. Built with React.</p>
+          </div>
         </div>
       </footer>
     </div>
   )
 }
 
-function CompetencyCard({ title, skills, gradient }) {
+function SkillCard({ title, skills }) {
   return (
-    <div className="p-8 rounded-2xl transition-all duration-300 hover:scale-105" style={{ background: 'rgba(255,255,255,0.08)', border: '2px solid rgba(217,172,111,0.4)', backdropFilter: 'blur(10px)' }}>
-      <h3 className="text-2xl font-black mb-8" style={{ color: '#f5ebe0' }}>{title}</h3>
+    <div className="p-8 rounded-2xl transition-all hover:scale-105" style={{ background: 'rgba(245,235,224,0.05)', border: '1px solid rgba(217,172,111,0.2)' }}>
+      <h3 className="text-xl font-bold mb-6" style={{ color: '#f28f49' }}>{title}</h3>
       <div className="flex flex-wrap gap-3">
         {skills.map(skill => (
-          <span key={skill} className="px-5 py-3 rounded-full font-bold text-sm text-white" style={{ background: gradient }}>
+          <span key={skill} className="px-4 py-2 rounded-full font-mono text-sm" style={{ background: 'rgba(242,143,73,0.15)', color: '#d9ac6f' }}>
             {skill}
           </span>
         ))}
@@ -209,34 +208,33 @@ function CompetencyCard({ title, skills, gradient }) {
   )
 }
 
-function ExperienceCard({ position, company, period, description, achievements, accentColor }) {
+function ExperienceCard({ position, company, period, points }) {
   return (
-    <div className="p-10 rounded-3xl bg-white transition-all duration-300 hover:scale-[1.02]" style={{ boxShadow: '0 30px 60px rgba(168,96,70,0.15)', borderLeft: `8px solid ${accentColor}` }}>
-      <div className="flex justify-between items-start mb-6 flex-wrap gap-4">
+    <div className="p-10 rounded-2xl bg-white" style={{ boxShadow: '0 20px 60px rgba(168,96,70,0.1)' }}>
+      <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-4 mb-6">
         <div>
-          <h3 className="text-3xl font-black text-[#1a1410]">{position}</h3>
-          <p className="text-xl font-bold mt-2" style={{ color: accentColor }}>{company}</p>
+          <h3 className="text-2xl font-black" style={{ color: '#0f0b09' }}>{position}</h3>
+          <p className="font-mono text-sm mt-1" style={{ color: '#ca4c3b' }}>{company}</p>
         </div>
-        <span className="px-6 py-3 rounded-full font-bold text-white text-sm whitespace-nowrap" style={{ background: accentColor }}>{period}</span>
+        <span className="font-mono text-sm px-4 py-2 rounded-full" style={{ background: '#f28f49', color: '#0f0b09' }}>{period}</span>
       </div>
-      <p className="text-[#3d2a1a] text-lg my-8 leading-relaxed">{description}</p>
-      <div className="space-y-4">
-        {achievements.map((achievement, idx) => (
-          <div key={idx} className="flex items-start gap-4">
-            <span className="text-2xl flex-shrink-0" style={{ color: accentColor }}>✓</span>
-            <span className="text-[#3d2a1a] font-semibold text-lg">{achievement}</span>
-          </div>
+      <ul className="space-y-3">
+        {points.map((point, idx) => (
+          <li key={idx} className="flex gap-4" style={{ color: '#3d2a1a' }}>
+            <span style={{ color: '#f28f49' }}>→</span>
+            <span>{point}</span>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   )
 }
 
-function StatCard({ number, label }) {
+function CertItem({ name }) {
   return (
-    <div className="p-10 rounded-2xl bg-white/15 backdrop-blur text-center">
-      <p className="text-6xl font-black mb-3" style={{ color: '#ffffff' }}>{number}</p>
-      <p className="font-bold text-lg" style={{ color: '#fff8f0' }}>{label}</p>
-    </div>
+    <li className="flex items-center gap-4 p-4 rounded-xl" style={{ background: 'rgba(242,143,73,0.1)' }}>
+      <span className="w-3 h-3 rounded-full" style={{ background: '#f28f49' }}></span>
+      <span className="font-semibold" style={{ color: '#f5ebe0' }}>{name}</span>
+    </li>
   )
 }
