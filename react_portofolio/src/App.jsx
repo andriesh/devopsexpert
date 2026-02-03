@@ -2,190 +2,248 @@ import React from 'react'
 
 export default function App() {
   return (
-    <div className="min-h-screen font-sans">
-      {/* Hero Section - Dark with gradient orbs */}
-      <header className="relative min-h-screen flex items-center overflow-hidden" style={{ background: '#0f0b09' }}>
-        {/* Large gradient orb top-right */}
-        <div className="absolute -top-40 -right-40 w-[700px] h-[700px] rounded-full opacity-60" style={{ background: 'radial-gradient(circle, #f28f49 0%, #ca4c3b 40%, transparent 70%)' }}></div>
-        {/* Smaller orb bottom-left */}
-        <div className="absolute -bottom-20 -left-20 w-[400px] h-[400px] rounded-full opacity-40" style={{ background: 'radial-gradient(circle, #d9ac6f 0%, #a86046 50%, transparent 70%)' }}></div>
-        
-        <div className="relative max-w-6xl mx-auto px-8 py-20 z-10 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <p className="font-mono text-sm tracking-[0.25em] uppercase mb-6" style={{ color: '#f28f49' }}>DevOps Engineer & SRE</p>
-              <h1 className="text-7xl lg:text-8xl font-black leading-none mb-8" style={{ color: '#f5ebe0' }}>
-                ANDREI<br/>RUSNAC
-              </h1>
-              <p className="text-xl leading-relaxed mb-10 max-w-md" style={{ color: '#d9ac6f' }}>
-                Building scalable cloud-native infrastructure with reliability and automation at its core.
-              </p>
+    <div className="min-h-screen bg-[#f5f5f5]">
+      {/* Hero Section */}
+      <header className="bg-white">
+        <div className="max-w-6xl mx-auto px-6 py-16">
+          <div className="flex flex-col lg:flex-row gap-12 items-start">
+            {/* Left - Profile Card */}
+            <div className="w-full lg:w-80 flex-shrink-0">
+              <div className="bg-[#1a1a1a] rounded-3xl p-8 text-center">
+                <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-br from-[#4f46e5] to-[#7c3aed] flex items-center justify-center text-5xl">
+                  👨‍💻
+                </div>
+                <h1 className="text-2xl font-bold text-white mb-1">Andrei Rusnac</h1>
+                <p className="text-[#888] mb-6">DevOps & SRE Engineer</p>
+                
+                <div className="space-y-3 text-left">
+                  <div className="flex items-center gap-3 text-sm">
+                    <span className="text-[#888]">📍</span>
+                    <span className="text-[#ccc]">Moldova / Remote</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-sm">
+                    <span className="text-[#888]">✅</span>
+                    <span className="text-emerald-400">Available for work</span>
+                  </div>
+                </div>
+              </div>
               
-              {/* Buttons */}
-              <div className="flex flex-wrap gap-4">
-                <a href="/CV_Andrei_Rusnac_Visual.pdf" className="px-8 py-4 font-mono font-bold text-sm uppercase tracking-wider rounded-full transition-all hover:scale-105" style={{ background: 'linear-gradient(135deg, #f28f49, #ca4c3b)', color: '#0f0b09' }}>
-                  Download CV
+              {/* Download CV */}
+              <a href="/CV_Andrei_Rusnac_Visual.pdf" className="mt-4 flex items-center justify-center gap-3 w-full py-4 bg-[#1a1a1a] text-white rounded-2xl hover:bg-[#2a2a2a] transition">
+                <span>📄</span>
+                <span className="font-medium">Download CV</span>
+              </a>
+              
+              {/* Contact */}
+              <a href="mailto:andrei@example.com" className="mt-3 flex items-center justify-center gap-3 w-full py-4 bg-white border border-[#e5e5e5] rounded-2xl hover:bg-[#f5f5f5] transition">
+                <span>✉️</span>
+                <span className="text-[#1a1a1a] font-medium">andrei@example.com</span>
+              </a>
+              
+              {/* Social Links */}
+              <div className="mt-4 flex justify-center gap-3">
+                <a href="https://www.linkedin.com/in/andrieshrusnac/" target="_blank" rel="noreferrer" className="w-12 h-12 rounded-xl bg-white border border-[#e5e5e5] flex items-center justify-center hover:bg-[#f5f5f5] transition">
+                  💼
                 </a>
-                <a href="https://www.linkedin.com/in/andrieshrusnac/" target="_blank" rel="noreferrer" className="px-8 py-4 font-mono font-bold text-sm uppercase tracking-wider rounded-full border-2 transition-all hover:scale-105" style={{ borderColor: '#d9ac6f', color: '#d9ac6f' }}>
-                  LinkedIn
+                <a href="https://github.com/andriesh" target="_blank" rel="noreferrer" className="w-12 h-12 rounded-xl bg-white border border-[#e5e5e5] flex items-center justify-center hover:bg-[#f5f5f5] transition">
+                  🐙
+                </a>
+                <a href="https://www.credly.com/users/andriesh/" target="_blank" rel="noreferrer" className="w-12 h-12 rounded-xl bg-white border border-[#e5e5e5] flex items-center justify-center hover:bg-[#f5f5f5] transition">
+                  🏆
                 </a>
               </div>
             </div>
             
-            {/* Right side - decorative element */}
-            <div className="hidden lg:flex justify-center items-center">
-              <div className="relative w-80 h-80 rounded-full flex items-center justify-center" style={{ background: 'linear-gradient(135deg, rgba(242,143,73,0.2), rgba(202,76,59,0.1))' }}>
-                <div className="w-60 h-60 rounded-full flex items-center justify-center" style={{ background: 'linear-gradient(135deg, rgba(217,172,111,0.3), rgba(168,96,70,0.2))' }}>
-                  <span className="text-8xl">🚀</span>
-                </div>
+            {/* Right - About */}
+            <div className="flex-1">
+              <h2 className="text-3xl font-bold text-[#1a1a1a] mb-6">About me</h2>
+              <div className="text-[#666] text-lg leading-relaxed space-y-4">
+                <p>
+                  Hello, I'm Andrei Rusnac, a DevOps and SRE engineer with extensive experience in building and maintaining scalable cloud-native infrastructure.
+                </p>
+                <p>
+                  My journey in DevOps began with a passion for automation and a desire to bridge the gap between development and operations. Over the years, I've honed my skills in Kubernetes orchestration, infrastructure-as-code, CI/CD pipelines, and observability solutions.
+                </p>
+                <p>
+                  I specialize in designing reliable, secure, and cost-effective platforms that enable teams to ship faster while maintaining high availability and performance standards.
+                </p>
               </div>
             </div>
           </div>
         </div>
       </header>
 
-      {/* About Section - Cream background */}
-      <section className="py-32 relative" style={{ background: 'linear-gradient(180deg, #f5ebe0 0%, #ede4d8 100%)' }}>
-        <div className="max-w-5xl mx-auto px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            <div className="lg:col-span-1">
-              <p className="font-mono text-sm tracking-[0.25em] uppercase mb-4" style={{ color: '#ca4c3b' }}>About Me</p>
-              <h2 className="text-4xl font-black" style={{ color: '#0f0b09' }}>WHO<br/>I AM</h2>
-            </div>
-            <div className="lg:col-span-2">
-              <p className="text-xl leading-relaxed" style={{ color: '#3d2a1a' }}>
-                Experienced DevOps and SRE engineer with a proven track record of designing and implementing scalable, secure, and observable cloud-native infrastructure. Specialized in Kubernetes orchestration, infrastructure-as-code, and building reliable platform engineering solutions.
-              </p>
-              <div className="flex gap-6 mt-10">
-                <a href="mailto:your-email@example.com" className="font-mono text-sm hover:underline" style={{ color: '#a86046' }}>📧 Email</a>
-                <a href="https://www.credly.com/users/andriesh/" target="_blank" rel="noreferrer" className="font-mono text-sm hover:underline" style={{ color: '#a86046' }}>🏆 Credly</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Skills Section - Dark */}
-      <section className="py-32 relative overflow-hidden" style={{ background: '#0f0b09' }}>
-        {/* Decorative orb */}
-        <div className="absolute top-1/2 -right-40 w-[500px] h-[500px] rounded-full opacity-30 -translate-y-1/2" style={{ background: 'radial-gradient(circle, #f28f49 0%, transparent 70%)' }}></div>
-        
-        <div className="max-w-5xl mx-auto px-8 relative z-10">
-          <p className="font-mono text-sm tracking-[0.25em] uppercase mb-4" style={{ color: '#f28f49' }}>What I Do</p>
-          <h2 className="text-5xl font-black mb-16" style={{ color: '#f5ebe0' }}>SKILLS</h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <SkillCard title="Cloud & Infrastructure" skills={['Kubernetes', 'Docker', 'AWS', 'Terraform', 'Ansible']} />
-            <SkillCard title="Observability" skills={['Prometheus', 'Grafana', 'ELK Stack', 'Jaeger', 'Datadog']} />
-            <SkillCard title="CI/CD & Automation" skills={['GitLab CI', 'GitHub Actions', 'Jenkins', 'ArgoCD', 'Helm']} />
-            <SkillCard title="Tools & Languages" skills={['Linux', 'Git', 'Python', 'Bash', 'Nginx']} />
-          </div>
-        </div>
-      </section>
-
-      {/* Experience Section - Cream with cards */}
-      <section className="py-32" style={{ background: 'linear-gradient(180deg, #ede4d8 0%, #f5ebe0 100%)' }}>
-        <div className="max-w-5xl mx-auto px-8">
-          <p className="font-mono text-sm tracking-[0.25em] uppercase mb-4" style={{ color: '#ca4c3b' }}>Career</p>
-          <h2 className="text-5xl font-black mb-16" style={{ color: '#0f0b09' }}>EXPERIENCE</h2>
+      {/* Experience Section */}
+      <section className="py-20 bg-white border-t border-[#eee]">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-3xl font-bold text-[#1a1a1a] mb-12">Experience</h2>
           
           <div className="space-y-8">
             <ExperienceCard
-              position="Senior DevOps Engineer"
               company="Company Name"
-              period="2023 — Present"
+              period="Jan 2023 – Present"
+              role="Senior DevOps Engineer"
+              location="Remote"
               points={[
-                'Led infrastructure modernization and cloud-native transformation',
-                'Architected multi-region Kubernetes infrastructure',
+                'Led infrastructure modernization and cloud-native transformation initiatives',
+                'Architected multi-region Kubernetes infrastructure supporting 50+ microservices',
                 'Reduced deployment time by 60% through CI/CD optimization',
-                'Reduced infrastructure costs by 40%'
+                'Implemented comprehensive observability solution with Prometheus and Grafana'
               ]}
             />
+            
             <ExperienceCard
-              position="DevOps Engineer"
               company="Previous Company"
-              period="2021 — 2023"
+              period="Jun 2021 – Dec 2022"
+              role="DevOps Engineer"
+              location="Hybrid"
               points={[
-                'Managed IaC deployments using Terraform and Ansible',
+                'Managed infrastructure-as-code deployments using Terraform and Ansible',
                 'Automated 90% of manual deployment processes',
                 'Established disaster recovery procedures with RPO < 1 hour',
-                'Mentored junior engineers in DevOps practices'
+                'Mentored 3 junior engineers in DevOps practices'
+              ]}
+            />
+            
+            <ExperienceCard
+              company="Earlier Company"
+              period="Mar 2019 – May 2021"
+              role="Systems Administrator"
+              location="On-site"
+              points={[
+                'Maintained Linux server infrastructure for 200+ users',
+                'Implemented monitoring and alerting systems',
+                'Reduced system downtime by 40% through proactive maintenance',
+                'Migrated legacy applications to containerized environments'
               ]}
             />
           </div>
         </div>
       </section>
 
-      {/* Certifications Section - Dark with gradient accent */}
-      <section className="py-32 relative overflow-hidden" style={{ background: '#0f0b09' }}>
-        {/* Gradient bar */}
-        <div className="absolute top-0 left-0 w-full h-2" style={{ background: 'linear-gradient(90deg, #f28f49, #ca4c3b, #d9ac6f)' }}></div>
-        {/* Decorative orb */}
-        <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] rounded-full opacity-20" style={{ background: 'radial-gradient(circle, #d9ac6f 0%, transparent 70%)' }}></div>
-        
-        <div className="max-w-5xl mx-auto px-8 relative z-10">
+      {/* Stack Section */}
+      <section className="py-20 bg-[#f5f5f5]">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-3xl font-bold text-[#1a1a1a] mb-12">Stack</h2>
+          
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            <StackItem icon="☸️" name="Kubernetes" />
+            <StackItem icon="🐳" name="Docker" />
+            <StackItem icon="☁️" name="AWS" />
+            <StackItem icon="🏗️" name="Terraform" />
+            <StackItem icon="📊" name="Prometheus" />
+            <StackItem icon="📈" name="Grafana" />
+            <StackItem icon="🔄" name="ArgoCD" />
+            <StackItem icon="⚙️" name="Ansible" />
+            <StackItem icon="🔧" name="Jenkins" />
+            <StackItem icon="🐙" name="GitHub Actions" />
+            <StackItem icon="🐧" name="Linux" />
+            <StackItem icon="🐍" name="Python" />
+          </div>
+        </div>
+      </section>
+
+      {/* Education & Certifications */}
+      <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            {/* Education */}
             <div>
-              <p className="font-mono text-sm tracking-[0.25em] uppercase mb-4" style={{ color: '#f28f49' }}>Credentials</p>
-              <h2 className="text-5xl font-black mb-12" style={{ color: '#f5ebe0' }}>CERTIFICATIONS</h2>
+              <h2 className="text-3xl font-bold text-[#1a1a1a] mb-12">Education</h2>
               
-              <ul className="space-y-6">
-                <CertItem name="Kubernetes Application Developer (CKAD)" />
-                <CertItem name="AWS Certified Solutions Architect" />
-                <CertItem name="Linux Professional Institute (LPI)" />
-              </ul>
+              <div className="space-y-8">
+                <EducationCard
+                  degree="Bachelor of Science in Computer Science"
+                  school="University Name"
+                  period="2015 – 2019"
+                  location="City, Country"
+                  description="Focused on distributed systems, networking, and software engineering principles."
+                />
+              </div>
             </div>
             
+            {/* Certifications */}
             <div>
-              <p className="font-mono text-sm tracking-[0.25em] uppercase mb-4" style={{ color: '#f28f49' }}>Background</p>
-              <h2 className="text-5xl font-black mb-12" style={{ color: '#f5ebe0' }}>EDUCATION</h2>
+              <h2 className="text-3xl font-bold text-[#1a1a1a] mb-12">Certifications</h2>
               
-              <div className="p-8 rounded-2xl" style={{ background: 'rgba(242,143,73,0.1)', border: '1px solid rgba(217,172,111,0.3)' }}>
-                <h3 className="text-2xl font-bold mb-2" style={{ color: '#f28f49' }}>Bachelor's Degree</h3>
-                <p className="font-mono text-sm mb-4" style={{ color: '#d9ac6f' }}>Computer Science</p>
-                <p style={{ color: '#a86046' }}>Advanced courses in Cloud Architecture and Distributed Systems</p>
+              <div className="space-y-4">
+                <CertCard name="Certified Kubernetes Application Developer (CKAD)" org="CNCF, 2023" />
+                <CertCard name="AWS Certified Solutions Architect" org="Amazon Web Services, 2022" />
+                <CertCard name="Linux Professional Institute (LPIC-1)" org="LPI, 2021" />
+                <CertCard name="HashiCorp Certified Terraform Associate" org="HashiCorp, 2022" />
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Stats Banner - Gradient */}
-      <section className="py-20" style={{ background: 'linear-gradient(135deg, #f28f49 0%, #ca4c3b 50%, #a86046 100%)' }}>
-        <div className="max-w-5xl mx-auto px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+      {/* Stats Section */}
+      <section className="py-16 bg-[#1a1a1a]">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <p className="text-6xl font-black" style={{ color: '#0f0b09' }}>8+</p>
-              <p className="font-mono text-sm uppercase tracking-wider mt-2" style={{ color: '#0f0b09' }}>Years Experience</p>
+              <p className="text-4xl font-bold text-white mb-2">8+</p>
+              <p className="text-[#888] text-sm">Years Experience</p>
             </div>
             <div>
-              <p className="text-6xl font-black" style={{ color: '#0f0b09' }}>50+</p>
-              <p className="font-mono text-sm uppercase tracking-wider mt-2" style={{ color: '#0f0b09' }}>Microservices</p>
+              <p className="text-4xl font-bold text-white mb-2">50+</p>
+              <p className="text-[#888] text-sm">Microservices</p>
             </div>
             <div>
-              <p className="text-6xl font-black" style={{ color: '#0f0b09' }}>40%</p>
-              <p className="font-mono text-sm uppercase tracking-wider mt-2" style={{ color: '#0f0b09' }}>Cost Savings</p>
+              <p className="text-4xl font-bold text-white mb-2">99.9%</p>
+              <p className="text-[#888] text-sm">Uptime SLA</p>
+            </div>
+            <div>
+              <p className="text-4xl font-bold text-white mb-2">40%</p>
+              <p className="text-[#888] text-sm">Cost Reduction</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Footer - Cream */}
-      <footer className="py-16" style={{ background: '#f5ebe0' }}>
-        <div className="max-w-5xl mx-auto px-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-8">
+      {/* Contact Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-3xl font-bold text-[#1a1a1a] mb-12">Let's talk</h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div>
-              <h3 className="text-2xl font-black" style={{ color: '#0f0b09' }}>ANDREI RUSNAC</h3>
-              <p className="font-mono text-sm mt-2" style={{ color: '#a86046' }}>DevOps Engineer & SRE</p>
+              <p className="text-sm text-[#888] mb-2">Email:</p>
+              <a href="mailto:andrei@example.com" className="text-[#1a1a1a] font-medium hover:text-[#4f46e5] transition">
+                andrei@example.com
+              </a>
             </div>
-            <div className="flex gap-6">
-              <a href="/CV_Andrei_Rusnac_Visual.pdf" className="font-mono text-sm uppercase tracking-wider hover:underline" style={{ color: '#ca4c3b' }}>Visual CV</a>
-              <a href="/CV_Andrei_Rusnac_ATS.pdf" className="font-mono text-sm uppercase tracking-wider hover:underline" style={{ color: '#ca4c3b' }}>ATS CV</a>
-              <a href="https://www.linkedin.com/in/andrieshrusnac/" target="_blank" rel="noreferrer" className="font-mono text-sm uppercase tracking-wider hover:underline" style={{ color: '#ca4c3b' }}>LinkedIn</a>
+            <div>
+              <p className="text-sm text-[#888] mb-2">LinkedIn:</p>
+              <a href="https://www.linkedin.com/in/andrieshrusnac/" target="_blank" rel="noreferrer" className="text-[#1a1a1a] font-medium hover:text-[#4f46e5] transition">
+                /in/andrieshrusnac
+              </a>
+            </div>
+            <div>
+              <p className="text-sm text-[#888] mb-2">GitHub:</p>
+              <a href="https://github.com/andriesh" target="_blank" rel="noreferrer" className="text-[#1a1a1a] font-medium hover:text-[#4f46e5] transition">
+                @andriesh
+              </a>
+            </div>
+            <div>
+              <p className="text-sm text-[#888] mb-2">Certifications:</p>
+              <a href="https://www.credly.com/users/andriesh/" target="_blank" rel="noreferrer" className="text-[#1a1a1a] font-medium hover:text-[#4f46e5] transition">
+                Credly Profile
+              </a>
             </div>
           </div>
-          <div className="mt-12 pt-8 border-t text-center" style={{ borderColor: '#d9ac6f' }}>
-            <p className="font-mono text-xs" style={{ color: '#a86046' }}>© {new Date().getFullYear()} Andrei Rusnac. Built with React.</p>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-8 bg-[#f5f5f5] border-t border-[#eee]">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-sm text-[#888]">© {new Date().getFullYear()} Andrei Rusnac. All rights reserved.</p>
+            <div className="flex gap-6">
+              <a href="/CV_Andrei_Rusnac_Visual.pdf" className="text-sm text-[#888] hover:text-[#1a1a1a] transition">Visual CV</a>
+              <a href="/CV_Andrei_Rusnac_ATS.pdf" className="text-sm text-[#888] hover:text-[#1a1a1a] transition">ATS CV</a>
+            </div>
           </div>
         </div>
       </footer>
@@ -193,48 +251,69 @@ export default function App() {
   )
 }
 
-function SkillCard({ title, skills }) {
+function ExperienceCard({ company, period, role, location, points }) {
   return (
-    <div className="p-8 rounded-2xl transition-all hover:scale-105" style={{ background: 'rgba(245,235,224,0.05)', border: '1px solid rgba(217,172,111,0.2)' }}>
-      <h3 className="text-xl font-bold mb-6" style={{ color: '#f28f49' }}>{title}</h3>
-      <div className="flex flex-wrap gap-3">
-        {skills.map(skill => (
-          <span key={skill} className="px-4 py-2 rounded-full font-mono text-sm" style={{ background: 'rgba(242,143,73,0.15)', color: '#d9ac6f' }}>
-            {skill}
-          </span>
-        ))}
+    <div className="flex flex-col lg:flex-row gap-6 pb-8 border-b border-[#eee] last:border-0">
+      <div className="lg:w-64 flex-shrink-0">
+        <h3 className="text-xl font-bold text-[#1a1a1a]">{company}</h3>
+        <p className="text-[#888] text-sm mt-1">{period}</p>
       </div>
-    </div>
-  )
-}
-
-function ExperienceCard({ position, company, period, points }) {
-  return (
-    <div className="p-10 rounded-2xl bg-white" style={{ boxShadow: '0 20px 60px rgba(168,96,70,0.1)' }}>
-      <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-4 mb-6">
-        <div>
-          <h3 className="text-2xl font-black" style={{ color: '#0f0b09' }}>{position}</h3>
-          <p className="font-mono text-sm mt-1" style={{ color: '#ca4c3b' }}>{company}</p>
+      <div className="flex-1">
+        <div className="flex items-center gap-3 mb-4">
+          <p className="font-semibold text-[#1a1a1a]">{role}</p>
+          <span className="px-3 py-1 bg-[#f5f5f5] rounded-full text-xs text-[#888]">📍 {location}</span>
         </div>
-        <span className="font-mono text-sm px-4 py-2 rounded-full" style={{ background: '#f28f49', color: '#0f0b09' }}>{period}</span>
+        <ul className="space-y-2">
+          {points.map((point, idx) => (
+            <li key={idx} className="flex gap-3 text-[#666]">
+              <span className="text-[#ccc]">•</span>
+              <span>{point}</span>
+            </li>
+          ))}
+        </ul>
       </div>
-      <ul className="space-y-3">
-        {points.map((point, idx) => (
-          <li key={idx} className="flex gap-4" style={{ color: '#3d2a1a' }}>
-            <span style={{ color: '#f28f49' }}>→</span>
-            <span>{point}</span>
-          </li>
-        ))}
-      </ul>
     </div>
   )
 }
 
-function CertItem({ name }) {
+function StackItem({ icon, name }) {
   return (
-    <li className="flex items-center gap-4 p-4 rounded-xl" style={{ background: 'rgba(242,143,73,0.1)' }}>
-      <span className="w-3 h-3 rounded-full" style={{ background: '#f28f49' }}></span>
-      <span className="font-semibold" style={{ color: '#f5ebe0' }}>{name}</span>
-    </li>
+    <div className="flex items-center gap-3 p-4 bg-white rounded-xl border border-[#eee] hover:border-[#ccc] transition cursor-default">
+      <span className="text-2xl">{icon}</span>
+      <span className="font-medium text-[#1a1a1a] text-sm">{name}</span>
+    </div>
+  )
+}
+
+function EducationCard({ degree, school, period, location, description }) {
+  return (
+    <div className="flex gap-4">
+      <div className="w-12 h-12 rounded-xl bg-[#f5f5f5] flex items-center justify-center flex-shrink-0">
+        🎓
+      </div>
+      <div>
+        <div className="flex items-center gap-3 mb-1">
+          <span className="text-xs text-[#888] px-2 py-1 bg-[#f5f5f5] rounded">📍 {location}</span>
+          <span className="text-xs text-[#888]">{period}</span>
+        </div>
+        <h3 className="text-lg font-bold text-[#1a1a1a] mb-1">{degree}</h3>
+        <p className="text-[#888] text-sm mb-2">{school}</p>
+        <p className="text-[#666] text-sm">{description}</p>
+      </div>
+    </div>
+  )
+}
+
+function CertCard({ name, org }) {
+  return (
+    <div className="flex items-center justify-between p-4 bg-[#f5f5f5] rounded-xl">
+      <div>
+        <h4 className="font-semibold text-[#1a1a1a] text-sm">{name}</h4>
+        <p className="text-[#888] text-xs mt-1">{org}</p>
+      </div>
+      <a href="https://www.credly.com/users/andriesh/" target="_blank" rel="noreferrer" className="text-xs text-[#4f46e5] hover:underline">
+        View
+      </a>
+    </div>
   )
 }
