@@ -2,70 +2,70 @@ import React from 'react'
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-[#f5f5f5]">
+    <div className="min-h-screen bg-[#f8f8f8] font-['Inter',sans-serif]">
       {/* Hero Section */}
       <header className="bg-white">
-        <div className="max-w-6xl mx-auto px-6 py-16">
-          <div className="flex flex-col lg:flex-row gap-12 items-start">
+        <div className="max-w-6xl mx-auto px-6 py-16 lg:py-24">
+          <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
             {/* Left - Profile Card */}
-            <div className="w-full lg:w-80 flex-shrink-0">
-              <div className="bg-[#1a1a1a] rounded-3xl p-8 text-center">
-                <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-br from-[#4f46e5] to-[#7c3aed] flex items-center justify-center text-5xl">
-                  👨‍💻
+            <div className="w-full lg:w-[320px] flex-shrink-0">
+              <div className="bg-[#141414] rounded-[32px] p-8 text-center">
+                <div className="w-28 h-28 mx-auto mb-6 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center overflow-hidden">
+                  <span className="text-5xl">👨‍💻</span>
                 </div>
-                <h1 className="text-2xl font-bold text-white mb-1">Andrei Rusnac</h1>
-                <p className="text-[#888] mb-6">DevOps & SRE Engineer</p>
+                <h1 className="text-[22px] font-bold text-white mb-1">Andrei Rusnac</h1>
+                <p className="text-[#8b8b8b] text-[15px] mb-6">DevOps & SRE Engineer</p>
                 
-                <div className="space-y-3 text-left">
-                  <div className="flex items-center gap-3 text-sm">
-                    <span className="text-[#888]">📍</span>
-                    <span className="text-[#ccc]">Moldova / Remote</span>
+                <div className="space-y-3 text-left px-2">
+                  <div className="flex items-center gap-3">
+                    <svg className="w-4 h-4 text-[#8b8b8b]" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" /></svg>
+                    <span className="text-[#d4d4d4] text-[14px]">Chișinău, Moldova</span>
                   </div>
-                  <div className="flex items-center gap-3 text-sm">
-                    <span className="text-[#888]">✅</span>
-                    <span className="text-emerald-400">Available for work</span>
+                  <div className="flex items-center gap-3">
+                    <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
+                    <span className="text-emerald-400 text-[14px]">Available for work</span>
                   </div>
                 </div>
               </div>
               
               {/* Download CV */}
-              <a href="/CV_Andrei_Rusnac_Visual.pdf" className="mt-4 flex items-center justify-center gap-3 w-full py-4 bg-[#1a1a1a] text-white rounded-2xl hover:bg-[#2a2a2a] transition">
-                <span>📄</span>
-                <span className="font-medium">Download CV</span>
+              <a href="/CV_Andrei_Rusnac_Visual.pdf" className="mt-4 flex items-center justify-center gap-3 w-full py-4 bg-[#141414] text-white rounded-2xl hover:bg-[#1f1f1f] transition-all">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+                <span className="font-medium text-[15px]">Download CV</span>
               </a>
               
-              {/* Contact */}
-              <a href="mailto:andrei@example.com" className="mt-3 flex items-center justify-center gap-3 w-full py-4 bg-white border border-[#e5e5e5] rounded-2xl hover:bg-[#f5f5f5] transition">
-                <span>✉️</span>
-                <span className="text-[#1a1a1a] font-medium">andrei@example.com</span>
+              {/* Contact Email */}
+              <a href="mailto:andriesh.rusnac@gmail.com" className="mt-3 flex items-center justify-center gap-3 w-full py-4 bg-white border border-[#e8e8e8] rounded-2xl hover:bg-[#f8f8f8] transition-all">
+                <svg className="w-5 h-5 text-[#141414]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                <span className="text-[#141414] font-medium text-[14px]">andriesh.rusnac@gmail.com</span>
               </a>
               
               {/* Social Links */}
               <div className="mt-4 flex justify-center gap-3">
-                <a href="https://www.linkedin.com/in/andrieshrusnac/" target="_blank" rel="noreferrer" className="w-12 h-12 rounded-xl bg-white border border-[#e5e5e5] flex items-center justify-center hover:bg-[#f5f5f5] transition">
-                  💼
+                <a href="https://www.linkedin.com/in/andrieshrusnac/" target="_blank" rel="noreferrer" className="w-12 h-12 rounded-xl bg-white border border-[#e8e8e8] flex items-center justify-center hover:bg-[#f8f8f8] hover:border-[#d0d0d0] transition-all">
+                  <svg className="w-5 h-5 text-[#0077b5]" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                 </a>
-                <a href="https://github.com/andriesh" target="_blank" rel="noreferrer" className="w-12 h-12 rounded-xl bg-white border border-[#e5e5e5] flex items-center justify-center hover:bg-[#f5f5f5] transition">
-                  🐙
+                <a href="https://github.com/andriesh" target="_blank" rel="noreferrer" className="w-12 h-12 rounded-xl bg-white border border-[#e8e8e8] flex items-center justify-center hover:bg-[#f8f8f8] hover:border-[#d0d0d0] transition-all">
+                  <svg className="w-5 h-5 text-[#141414]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                 </a>
-                <a href="https://www.credly.com/users/andriesh/" target="_blank" rel="noreferrer" className="w-12 h-12 rounded-xl bg-white border border-[#e5e5e5] flex items-center justify-center hover:bg-[#f5f5f5] transition">
-                  🏆
+                <a href="https://www.credly.com/users/andriesh/" target="_blank" rel="noreferrer" className="w-12 h-12 rounded-xl bg-white border border-[#e8e8e8] flex items-center justify-center hover:bg-[#f8f8f8] hover:border-[#d0d0d0] transition-all">
+                  <svg className="w-5 h-5 text-[#ff6b00]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                 </a>
               </div>
             </div>
             
             {/* Right - About */}
-            <div className="flex-1">
-              <h2 className="text-3xl font-bold text-[#1a1a1a] mb-6">About me</h2>
-              <div className="text-[#666] text-lg leading-relaxed space-y-4">
+            <div className="flex-1 pt-2">
+              <h2 className="text-[32px] font-bold text-[#141414] mb-6">About me</h2>
+              <div className="text-[#5c5c5c] text-[16px] leading-[1.8] space-y-4">
                 <p>
-                  Hello, I'm Andrei Rusnac, a DevOps and SRE engineer with extensive experience in building and maintaining scalable cloud-native infrastructure.
+                  Seasoned DevOps / SRE / Platform Engineer focused on building reliable, observable, and secure cloud-native platforms. I automate infrastructure and delivery pipelines, design scalable architectures, and improve runbook-driven operational readiness.
                 </p>
                 <p>
-                  My journey in DevOps began with a passion for automation and a desire to bridge the gap between development and operations. Over the years, I've honed my skills in Kubernetes orchestration, infrastructure-as-code, CI/CD pipelines, and observability solutions.
+                  My core strengths include Linux, Kubernetes, Cloud, Terraform, CI/CD, Observability, and Networking. I specialize in designing platforms that enable teams to ship faster while maintaining high availability standards.
                 </p>
-                <p>
-                  I specialize in designing reliable, secure, and cost-effective platforms that enable teams to ship faster while maintaining high availability and performance standards.
+                <p className="font-medium text-[#141414]">
+                  Building scalable, observable and secure cloud-native platforms.
                 </p>
               </div>
             </div>
@@ -74,47 +74,55 @@ export default function App() {
       </header>
 
       {/* Experience Section */}
-      <section className="py-20 bg-white border-t border-[#eee]">
+      <section className="py-20 bg-white border-t border-[#f0f0f0]">
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-[#1a1a1a] mb-12">Experience</h2>
+          <h2 className="text-[32px] font-bold text-[#141414] mb-12">Experience</h2>
           
-          <div className="space-y-8">
+          <div className="space-y-0">
             <ExperienceCard
-              company="Company Name"
-              period="Jan 2023 – Present"
-              role="Senior DevOps Engineer"
-              location="Remote"
-              points={[
-                'Led infrastructure modernization and cloud-native transformation initiatives',
-                'Architected multi-region Kubernetes infrastructure supporting 50+ microservices',
-                'Reduced deployment time by 60% through CI/CD optimization',
-                'Implemented comprehensive observability solution with Prometheus and Grafana'
-              ]}
-            />
-            
-            <ExperienceCard
-              company="Previous Company"
-              period="Jun 2021 – Dec 2022"
+              company="Amdaris"
+              period="Jan 2025 — Present"
               role="DevOps Engineer"
-              location="Hybrid"
+              location="Chișinău, Moldova"
               points={[
-                'Managed infrastructure-as-code deployments using Terraform and Ansible',
-                'Automated 90% of manual deployment processes',
-                'Established disaster recovery procedures with RPO < 1 hour',
-                'Mentored 3 junior engineers in DevOps practices'
+                'Designed and implemented deployment pipelines using Azure DevOps and GitHub Actions, automating release checks and validations',
+                'Implemented observability stacks using Prometheus, Grafana and Mimir to improve SLO monitoring and incident detection',
+                'Automated infrastructure provisioning using Terraform; introduced IaC patterns and reusable modules'
               ]}
             />
             
             <ExperienceCard
-              company="Earlier Company"
-              period="Mar 2019 – May 2021"
-              role="Systems Administrator"
-              location="On-site"
+              company="CG Solutions"
+              period="Apr 2017 — Dec 2024"
+              role="DevOps Engineer / SRE"
+              location="Petah Tikva, Israel"
               points={[
-                'Maintained Linux server infrastructure for 200+ users',
-                'Implemented monitoring and alerting systems',
-                'Reduced system downtime by 40% through proactive maintenance',
-                'Migrated legacy applications to containerized environments'
+                'Managed multi-tenant cloud services and automated recovery workflows (Ansible, Bash, Python)',
+                'Implemented Kubernetes orchestration (Rancher), autoscaling, and pipeline automation to improve deployment reliability',
+                'Rolled out monitoring and logging (Prometheus, Grafana, ELK) and security controls (IAM, WAF), lowering MTTR',
+                'Designed and maintained networking and firewall infrastructure (Fortigate, Cisco, Mikrotik)'
+              ]}
+            />
+            
+            <ExperienceCard
+              company="The World Bank"
+              period="Feb 2023 — Feb 2024"
+              role="Independent Consultant"
+              location="Chișinău, Moldova"
+              points={[
+                'Performed infrastructure and network assessments, authored security-focused recommendations',
+                'Contributed to assessment reports for government infrastructure projects'
+              ]}
+            />
+            
+            <ExperienceCard
+              company="Devarti SRL"
+              period="Jun 2019 — Aug 2024"
+              role="System Engineer"
+              location="Bucharest, Romania"
+              points={[
+                'Managed on-prem infrastructure, VoIP (FreePBX), SMTP deliverability (Zimbra), and hosted web services',
+                'Improved reliability and automation across infrastructure stack'
               ]}
             />
           </div>
@@ -122,81 +130,71 @@ export default function App() {
       </section>
 
       {/* Stack Section */}
-      <section className="py-20 bg-[#f5f5f5]">
+      <section className="py-20 bg-[#f8f8f8]">
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-[#1a1a1a] mb-12">Stack</h2>
+          <h2 className="text-[32px] font-bold text-[#141414] mb-12">Stack</h2>
           
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            <StackItem icon="☸️" name="Kubernetes" />
-            <StackItem icon="🐳" name="Docker" />
-            <StackItem icon="☁️" name="AWS" />
-            <StackItem icon="🏗️" name="Terraform" />
-            <StackItem icon="📊" name="Prometheus" />
-            <StackItem icon="📈" name="Grafana" />
-            <StackItem icon="🔄" name="ArgoCD" />
-            <StackItem icon="⚙️" name="Ansible" />
-            <StackItem icon="🔧" name="Jenkins" />
-            <StackItem icon="🐙" name="GitHub Actions" />
-            <StackItem icon="🐧" name="Linux" />
-            <StackItem icon="🐍" name="Python" />
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+            <StackItem name="Kubernetes" />
+            <StackItem name="Docker" />
+            <StackItem name="Azure" />
+            <StackItem name="Terraform" />
+            <StackItem name="Prometheus" />
+            <StackItem name="Grafana" />
+            <StackItem name="ArgoCD" />
+            <StackItem name="FluxCD" />
+            <StackItem name="Ansible" />
+            <StackItem name="Jenkins" />
+            <StackItem name="GitHub Actions" />
+            <StackItem name="Azure DevOps" />
+            <StackItem name="Linux" />
+            <StackItem name="Python" />
+            <StackItem name="Bash" />
+            <StackItem name="ELK Stack" />
+            <StackItem name="MySQL" />
+            <StackItem name="PostgreSQL" />
           </div>
         </div>
       </section>
 
-      {/* Education & Certifications */}
+      {/* Certifications Section */}
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            {/* Education */}
-            <div>
-              <h2 className="text-3xl font-bold text-[#1a1a1a] mb-12">Education</h2>
-              
-              <div className="space-y-8">
-                <EducationCard
-                  degree="Bachelor of Science in Computer Science"
-                  school="University Name"
-                  period="2015 – 2019"
-                  location="City, Country"
-                  description="Focused on distributed systems, networking, and software engineering principles."
-                />
-              </div>
-            </div>
-            
-            {/* Certifications */}
-            <div>
-              <h2 className="text-3xl font-bold text-[#1a1a1a] mb-12">Certifications</h2>
-              
-              <div className="space-y-4">
-                <CertCard name="Certified Kubernetes Application Developer (CKAD)" org="CNCF, 2023" />
-                <CertCard name="AWS Certified Solutions Architect" org="Amazon Web Services, 2022" />
-                <CertCard name="Linux Professional Institute (LPIC-1)" org="LPI, 2021" />
-                <CertCard name="HashiCorp Certified Terraform Associate" org="HashiCorp, 2022" />
-              </div>
-            </div>
+          <h2 className="text-[32px] font-bold text-[#141414] mb-12">Certifications</h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <CertCard name="Kubestronaut" org="CNCF" badge="🏆" />
+            <CertCard name="Certified Kubernetes Administrator (CKA)" org="CNCF" />
+            <CertCard name="Certified Kubernetes Application Developer (CKAD)" org="CNCF" />
+            <CertCard name="Certified Kubernetes Security Specialist (CKS)" org="CNCF" />
+            <CertCard name="Kubernetes and Cloud Native Security Associate (KCSA)" org="CNCF" />
+            <CertCard name="Kubernetes and Cloud Native Associate (KCNA)" org="CNCF" />
+            <CertCard name="Prometheus Certified Associate (PCA)" org="CNCF" />
+            <CertCard name="Cilium Certified Associate (CCA)" org="CNCF" />
+            <CertCard name="CCNA Routing & Switching" org="Cisco" />
+            <CertCard name="CCNA Security" org="Cisco" />
+            <CertCard name="CCNA Wireless" org="Cisco" />
+            <CertCard name="Linux Professional Institute (LPIC-1)" org="LPI" />
           </div>
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-16 bg-[#1a1a1a]">
+      {/* Education Section */}
+      <section className="py-20 bg-[#f8f8f8]">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <p className="text-4xl font-bold text-white mb-2">8+</p>
-              <p className="text-[#888] text-sm">Years Experience</p>
-            </div>
-            <div>
-              <p className="text-4xl font-bold text-white mb-2">50+</p>
-              <p className="text-[#888] text-sm">Microservices</p>
-            </div>
-            <div>
-              <p className="text-4xl font-bold text-white mb-2">99.9%</p>
-              <p className="text-[#888] text-sm">Uptime SLA</p>
-            </div>
-            <div>
-              <p className="text-4xl font-bold text-white mb-2">40%</p>
-              <p className="text-[#888] text-sm">Cost Reduction</p>
-            </div>
+          <h2 className="text-[32px] font-bold text-[#141414] mb-12">Education</h2>
+          
+          <div className="space-y-6">
+            <EducationCard
+              degree="Licentiate Degree, Economics"
+              school="University of Applied Studies"
+              period="2009"
+            />
+            <EducationCard
+              degree="Networking Associate"
+              school="Academia Cisco"
+              period="2007"
+            />
           </div>
         </div>
       </section>
@@ -204,45 +202,62 @@ export default function App() {
       {/* Contact Section */}
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-[#1a1a1a] mb-12">Let's talk</h2>
+          <h2 className="text-[32px] font-bold text-[#141414] mb-4">Let's talk</h2>
+          <p className="text-[#8b8b8b] text-[16px] mb-12">Feel free to reach out for opportunities or collaborations.</p>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <ContactCard
+              label="Email"
+              value="andriesh.rusnac@gmail.com"
+              href="mailto:andriesh.rusnac@gmail.com"
+            />
+            <ContactCard
+              label="Phone"
+              value="+373 69 441 086"
+              href="tel:+37369441086"
+            />
+            <ContactCard
+              label="LinkedIn"
+              value="/in/andrieshrusnac"
+              href="https://www.linkedin.com/in/andrieshrusnac/"
+            />
+            <ContactCard
+              label="Credly"
+              value="View Badges"
+              href="https://www.credly.com/users/andriesh/"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Languages */}
+      <section className="py-16 bg-[#141414]">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="flex flex-wrap justify-center gap-12 text-center">
             <div>
-              <p className="text-sm text-[#888] mb-2">Email:</p>
-              <a href="mailto:andrei@example.com" className="text-[#1a1a1a] font-medium hover:text-[#4f46e5] transition">
-                andrei@example.com
-              </a>
+              <p className="text-white font-bold text-[18px]">Romanian</p>
+              <p className="text-[#8b8b8b] text-[14px] mt-1">Native</p>
             </div>
             <div>
-              <p className="text-sm text-[#888] mb-2">LinkedIn:</p>
-              <a href="https://www.linkedin.com/in/andrieshrusnac/" target="_blank" rel="noreferrer" className="text-[#1a1a1a] font-medium hover:text-[#4f46e5] transition">
-                /in/andrieshrusnac
-              </a>
+              <p className="text-white font-bold text-[18px]">English</p>
+              <p className="text-[#8b8b8b] text-[14px] mt-1">Professional</p>
             </div>
             <div>
-              <p className="text-sm text-[#888] mb-2">GitHub:</p>
-              <a href="https://github.com/andriesh" target="_blank" rel="noreferrer" className="text-[#1a1a1a] font-medium hover:text-[#4f46e5] transition">
-                @andriesh
-              </a>
-            </div>
-            <div>
-              <p className="text-sm text-[#888] mb-2">Certifications:</p>
-              <a href="https://www.credly.com/users/andriesh/" target="_blank" rel="noreferrer" className="text-[#1a1a1a] font-medium hover:text-[#4f46e5] transition">
-                Credly Profile
-              </a>
+              <p className="text-white font-bold text-[18px]">Russian</p>
+              <p className="text-[#8b8b8b] text-[14px] mt-1">Fluent</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="py-8 bg-[#f5f5f5] border-t border-[#eee]">
+      <footer className="py-8 bg-white border-t border-[#f0f0f0]">
         <div className="max-w-6xl mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-[#888]">© {new Date().getFullYear()} Andrei Rusnac. All rights reserved.</p>
+            <p className="text-[14px] text-[#8b8b8b]">© {new Date().getFullYear()} Andrei Rusnac. All rights reserved.</p>
             <div className="flex gap-6">
-              <a href="/CV_Andrei_Rusnac_Visual.pdf" className="text-sm text-[#888] hover:text-[#1a1a1a] transition">Visual CV</a>
-              <a href="/CV_Andrei_Rusnac_ATS.pdf" className="text-sm text-[#888] hover:text-[#1a1a1a] transition">ATS CV</a>
+              <a href="/CV_Andrei_Rusnac_Visual.pdf" className="text-[14px] text-[#8b8b8b] hover:text-[#141414] transition-colors">Visual CV</a>
+              <a href="/CV_Andrei_Rusnac_ATS.pdf" className="text-[14px] text-[#8b8b8b] hover:text-[#141414] transition-colors">ATS CV</a>
             </div>
           </div>
         </div>
@@ -253,20 +268,23 @@ export default function App() {
 
 function ExperienceCard({ company, period, role, location, points }) {
   return (
-    <div className="flex flex-col lg:flex-row gap-6 pb-8 border-b border-[#eee] last:border-0">
-      <div className="lg:w-64 flex-shrink-0">
-        <h3 className="text-xl font-bold text-[#1a1a1a]">{company}</h3>
-        <p className="text-[#888] text-sm mt-1">{period}</p>
+    <div className="flex flex-col lg:flex-row gap-6 py-8 border-b border-[#f0f0f0] last:border-b-0">
+      <div className="lg:w-[240px] flex-shrink-0">
+        <h3 className="text-[18px] font-bold text-[#141414]">{company}</h3>
+        <p className="text-[#8b8b8b] text-[14px] mt-1">{period}</p>
       </div>
       <div className="flex-1">
-        <div className="flex items-center gap-3 mb-4">
-          <p className="font-semibold text-[#1a1a1a]">{role}</p>
-          <span className="px-3 py-1 bg-[#f5f5f5] rounded-full text-xs text-[#888]">📍 {location}</span>
+        <div className="flex flex-wrap items-center gap-3 mb-4">
+          <p className="font-semibold text-[#141414] text-[16px]">{role}</p>
+          <span className="px-3 py-1.5 bg-[#f8f8f8] rounded-full text-[12px] text-[#8b8b8b] flex items-center gap-1.5">
+            <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" /></svg>
+            {location}
+          </span>
         </div>
         <ul className="space-y-2">
           {points.map((point, idx) => (
-            <li key={idx} className="flex gap-3 text-[#666]">
-              <span className="text-[#ccc]">•</span>
+            <li key={idx} className="flex gap-3 text-[#5c5c5c] text-[15px] leading-relaxed">
+              <span className="text-[#d0d0d0] mt-1">•</span>
               <span>{point}</span>
             </li>
           ))}
@@ -276,44 +294,51 @@ function ExperienceCard({ company, period, role, location, points }) {
   )
 }
 
-function StackItem({ icon, name }) {
+function StackItem({ name }) {
   return (
-    <div className="flex items-center gap-3 p-4 bg-white rounded-xl border border-[#eee] hover:border-[#ccc] transition cursor-default">
-      <span className="text-2xl">{icon}</span>
-      <span className="font-medium text-[#1a1a1a] text-sm">{name}</span>
+    <div className="flex items-center justify-center px-4 py-3 bg-white rounded-xl border border-[#e8e8e8] hover:border-[#d0d0d0] hover:shadow-sm transition-all cursor-default">
+      <span className="font-medium text-[#141414] text-[13px]">{name}</span>
     </div>
   )
 }
 
-function EducationCard({ degree, school, period, location, description }) {
+function EducationCard({ degree, school, period }) {
   return (
-    <div className="flex gap-4">
-      <div className="w-12 h-12 rounded-xl bg-[#f5f5f5] flex items-center justify-center flex-shrink-0">
-        🎓
+    <div className="flex items-start gap-4 p-6 bg-white rounded-2xl border border-[#e8e8e8]">
+      <div className="w-12 h-12 rounded-xl bg-[#f8f8f8] flex items-center justify-center flex-shrink-0">
+        <svg className="w-6 h-6 text-[#8b8b8b]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 14l9-5-9-5-9 5 9 5z" /><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" /></svg>
       </div>
       <div>
-        <div className="flex items-center gap-3 mb-1">
-          <span className="text-xs text-[#888] px-2 py-1 bg-[#f5f5f5] rounded">📍 {location}</span>
-          <span className="text-xs text-[#888]">{period}</span>
+        <h3 className="text-[16px] font-bold text-[#141414]">{degree}</h3>
+        <p className="text-[#8b8b8b] text-[14px] mt-1">{school}</p>
+        <p className="text-[#b0b0b0] text-[13px] mt-1">{period}</p>
+      </div>
+    </div>
+  )
+}
+
+function CertCard({ name, org, badge }) {
+  return (
+    <div className="flex items-center justify-between p-5 bg-[#f8f8f8] rounded-xl hover:bg-[#f0f0f0] transition-colors">
+      <div className="flex items-center gap-3">
+        {badge && <span className="text-xl">{badge}</span>}
+        <div>
+          <h4 className="font-semibold text-[#141414] text-[14px]">{name}</h4>
+          <p className="text-[#8b8b8b] text-[12px] mt-0.5">{org}</p>
         </div>
-        <h3 className="text-lg font-bold text-[#1a1a1a] mb-1">{degree}</h3>
-        <p className="text-[#888] text-sm mb-2">{school}</p>
-        <p className="text-[#666] text-sm">{description}</p>
       </div>
-    </div>
-  )
-}
-
-function CertCard({ name, org }) {
-  return (
-    <div className="flex items-center justify-between p-4 bg-[#f5f5f5] rounded-xl">
-      <div>
-        <h4 className="font-semibold text-[#1a1a1a] text-sm">{name}</h4>
-        <p className="text-[#888] text-xs mt-1">{org}</p>
-      </div>
-      <a href="https://www.credly.com/users/andriesh/" target="_blank" rel="noreferrer" className="text-xs text-[#4f46e5] hover:underline">
+      <a href="https://www.credly.com/users/andriesh/" target="_blank" rel="noreferrer" className="text-[12px] text-[#0066cc] hover:underline font-medium">
         View
       </a>
     </div>
+  )
+}
+
+function ContactCard({ label, value, href }) {
+  return (
+    <a href={href} target={href.startsWith('http') ? '_blank' : undefined} rel={href.startsWith('http') ? 'noreferrer' : undefined} className="block p-5 bg-[#f8f8f8] rounded-xl hover:bg-[#f0f0f0] transition-colors group">
+      <p className="text-[#8b8b8b] text-[12px] uppercase tracking-wider mb-2">{label}</p>
+      <p className="text-[#141414] font-medium text-[14px] group-hover:text-[#0066cc] transition-colors">{value}</p>
+    </a>
   )
 }
