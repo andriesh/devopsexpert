@@ -147,6 +147,9 @@ export default function App() {
                 <p>
                   My core strengths include Linux, Kubernetes, Cloud, Terraform, CI/CD, Observability, and Networking. I specialize in designing platforms that enable teams to ship faster while maintaining high availability standards.
                 </p>
+                <p>
+                  I'm passionate about leveraging AI and automation to improve operational efficiency and reduce toil in platform engineering.
+                </p>
                 <p className={`font-medium transition-colors duration-300 ${isDark ? 'text-[#c0c0c0]' : 'text-[#5c5c5c]'}`}>
                   Building scalable, observable and secure cloud-native platforms.
                 </p>
@@ -168,12 +171,14 @@ export default function App() {
                   <StackItem isDark={isDark} name="Jenkins" />
                   <StackItem isDark={isDark} name="GitHub Actions" />
                   <StackItem isDark={isDark} name="Azure DevOps" />
+                  <StackItem isDark={isDark} name="GitLab" />
                   <StackItem isDark={isDark} name="Linux" />
                   <StackItem isDark={isDark} name="Python" />
                   <StackItem isDark={isDark} name="Bash" />
                   <StackItem isDark={isDark} name="ELK Stack" />
                   <StackItem isDark={isDark} name="MySQL" />
                   <StackItem isDark={isDark} name="PostgreSQL" />
+                  <StackItem isDark={isDark} name="AWS" />
                 </div>
               </div>
             </div>
@@ -261,32 +266,11 @@ export default function App() {
 
       {/* Contact Section */}
       <section className={`py-20 transition-colors duration-300 ${isDark ? 'bg-[#1a1a1a]' : 'bg-white'}`}>
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-2xl mx-auto px-6">
           <h2 className={`text-[32px] font-bold mb-4 transition-colors duration-300 ${isDark ? 'text-white' : 'text-[#141414]'}`}>Let's talk</h2>
-          <p className={`text-[16px] mb-12 transition-colors duration-300 ${isDark ? 'text-[#a0a0a0]' : 'text-[#8b8b8b]'}`}>Feel free to reach out for opportunities or collaborations.</p>
+          <p className={`text-[16px] mb-12 transition-colors duration-300 ${isDark ? 'text-[#a0a0a0]' : 'text-[#8b8b8b]'}`}>Feel free to reach out for opportunities or collaborations. Send me a message and I'll get back to you as soon as possible.</p>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <ContactCard isDark={isDark}
-              label="Email"
-              value="andriesh.rusnac@gmail.com"
-              href="mailto:andriesh.rusnac@gmail.com"
-            />
-            <ContactCard isDark={isDark}
-              label="Phone"
-              value="+373 69 441 086"
-              href="tel:+37369441086"
-            />
-            <ContactCard isDark={isDark}
-              label="LinkedIn"
-              value="/in/andrieshrusnac"
-              href="https://www.linkedin.com/in/andrieshrusnac/"
-            />
-            <ContactCard isDark={isDark}
-              label="Credly"
-              value="View Badges"
-              href="https://www.credly.com/users/andriesh/"
-            />
-          </div>
+          <ContactForm isDark={isDark} />
         </div>
       </section>
 
@@ -353,7 +337,7 @@ function CertCard({ isDark, name, org, badge }) {
         </div>
       </div>
       <a href="https://www.credly.com/users/andriesh/" target="_blank" rel="noreferrer" className="flex-shrink-0">
-        <svg className="w-5 h-5 text-[#ff6b00]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2c-.306 0-.612.098-.875.292l-8.75 6.219c-.525.373-.875.989-.875 1.65v8.678c0 1.1.9 2 2 2h17c1.1 0 2-.9 2-2v-8.678c0-.661-.35-1.277-.875-1.65l-8.75-6.219c-.263-.194-.569-.292-.875-.292zm0 3.5l6.25 4.44h-12.5L12 5.5z"/></svg>
+        <img src="https://img.icons8.com/?size=96&id=imamZukNSZr3&format=png" alt="Credly" className="w-5 h-5" />
       </a>
     </div>
   )
@@ -365,5 +349,101 @@ function ContactCard({ isDark, label, value, href }) {
       <p className={`text-[12px] uppercase tracking-wider mb-2 transition-colors duration-300 ${isDark ? 'text-[#a0a0a0]' : 'text-[#8b8b8b]'}`}>{label}</p>
       <p className={`font-medium text-[14px] transition-colors duration-300 ${isDark ? 'text-white group-hover:text-blue-400' : 'text-[#141414] group-hover:text-[#0066cc]'}`}>{value}</p>
     </a>
+  )
+}
+
+function ContactForm({ isDark }) {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  })
+  const [submitted, setSubmitted] = useState(false)
+
+  const handleChange = (e) => {
+    const { name, value } = e.target
+    setFormData(prev => ({ ...prev, [name]: value }))
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    // Encode data for mailto link to obscure from bots
+    const mailtoLink = `mailto:andriesh.rusnac@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`)}`
+    window.location.href = mailtoLink
+    setSubmitted(true)
+    setTimeout(() => setSubmitted(false), 3000)
+  }
+
+  return (
+    <form onSubmit={handleSubmit} className={`p-8 rounded-2xl transition-colors duration-300 ${isDark ? 'bg-[#2a2a2a] border border-[#3a3a3a]' : 'bg-[#f8f8f8] border border-[#e8e8e8]'}`}>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+        <div>
+          <label className={`block text-[14px] font-medium mb-2 transition-colors duration-300 ${isDark ? 'text-white' : 'text-[#141414]'}`}>
+            Name
+          </label>
+          <input
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+            placeholder="Your name"
+            className={`w-full px-4 py-2 rounded-lg transition-colors duration-300 ${isDark ? 'bg-[#1a1a1a] border border-[#4a4a4a] text-white placeholder-[#808080] focus:border-blue-500' : 'bg-white border border-[#d0d0d0] text-[#141414] placeholder-[#a0a0a0] focus:border-blue-500'} focus:outline-none`}
+          />
+        </div>
+        <div>
+          <label className={`block text-[14px] font-medium mb-2 transition-colors duration-300 ${isDark ? 'text-white' : 'text-[#141414]'}`}>
+            Email
+          </label>
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+            placeholder="your.email@example.com"
+            className={`w-full px-4 py-2 rounded-lg transition-colors duration-300 ${isDark ? 'bg-[#1a1a1a] border border-[#4a4a4a] text-white placeholder-[#808080] focus:border-blue-500' : 'bg-white border border-[#d0d0d0] text-[#141414] placeholder-[#a0a0a0] focus:border-blue-500'} focus:outline-none`}
+          />
+        </div>
+      </div>
+      <div className="mb-6">
+        <label className={`block text-[14px] font-medium mb-2 transition-colors duration-300 ${isDark ? 'text-white' : 'text-[#141414]'}`}>
+          Subject
+        </label>
+        <input
+          type="text"
+          name="subject"
+          value={formData.subject}
+          onChange={handleChange}
+          required
+          placeholder="What is this about?"
+          className={`w-full px-4 py-2 rounded-lg transition-colors duration-300 ${isDark ? 'bg-[#1a1a1a] border border-[#4a4a4a] text-white placeholder-[#808080] focus:border-blue-500' : 'bg-white border border-[#d0d0d0] text-[#141414] placeholder-[#a0a0a0] focus:border-blue-500'} focus:outline-none`}
+        />
+      </div>
+      <div className="mb-6">
+        <label className={`block text-[14px] font-medium mb-2 transition-colors duration-300 ${isDark ? 'text-white' : 'text-[#141414]'}`}>
+          Message
+        </label>
+        <textarea
+          name="message"
+          value={formData.message}
+          onChange={handleChange}
+          required
+          placeholder="Your message here..."
+          rows="5"
+          className={`w-full px-4 py-2 rounded-lg transition-colors duration-300 ${isDark ? 'bg-[#1a1a1a] border border-[#4a4a4a] text-white placeholder-[#808080] focus:border-blue-500' : 'bg-white border border-[#d0d0d0] text-[#141414] placeholder-[#a0a0a0] focus:border-blue-500'} focus:outline-none`}
+        />
+      </div>
+      <button
+        type="submit"
+        className={`w-full py-3 rounded-lg font-medium transition-all ${isDark ? 'bg-blue-600 hover:bg-blue-700 text-white' : 'bg-blue-600 hover:bg-blue-700 text-white'}`}
+      >
+        {submitted ? 'Message sent! Opening email client...' : 'Send Message'}
+      </button>
+      <p className={`text-[12px] mt-4 text-center transition-colors duration-300 ${isDark ? 'text-[#a0a0a0]' : 'text-[#8b8b8b]'}`}>
+        Your message will open your default email client. Please verify the details before sending.
+      </p>
+    </form>
   )
 }
