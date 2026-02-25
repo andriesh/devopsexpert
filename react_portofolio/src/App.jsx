@@ -243,11 +243,11 @@ export default function App() {
       </section>
 
       {/* Certifications Section */}
-      <section className={`py-20 transition-colors duration-300 ${isDark ? 'bg-[#1a1a1a]' : 'bg-white'}`}>
+      <section className={`py-16 transition-colors duration-300 ${isDark ? 'bg-[#1a1a1a]' : 'bg-white'}`}>
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className={`text-[32px] font-bold mb-12 transition-colors duration-300 ${isDark ? 'text-white' : 'text-[#141414]'}`}>Certifications</h2>
+          <h2 className={`text-[28px] font-bold mb-8 transition-colors duration-300 ${isDark ? 'text-white' : 'text-[#141414]'}`}>Certifications</h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
             <CertCard isDark={isDark} name="Golden Kubestronaut" org="CNCF" badge="🏆" />
             <CertCard isDark={isDark} name="Certified Kubernetes Administrator (CKA)" org="CNCF" />
             <CertCard isDark={isDark} name="Certified Kubernetes Application Developer (CKAD)" org="CNCF" />
@@ -328,18 +328,15 @@ function StackItem({ isDark, name }) {
 
 function CertCard({ isDark, name, org, badge }) {
   return (
-    <div className={`flex items-center justify-between p-5 rounded-xl transition-colors duration-300 ${isDark ? 'bg-[#2a2a2a] hover:bg-[#3a3a3a]' : 'bg-[#f8f8f8] hover:bg-[#f0f0f0]'}`}>
-      <div className="flex items-center gap-3">
-        {badge && <span className="text-xl">{badge}</span>}
-        <div>
-          <h4 className={`font-semibold text-[14px] transition-colors duration-300 ${isDark ? 'text-white' : 'text-[#141414]'}`}>{name}</h4>
-          <p className={`text-[12px] mt-0.5 transition-colors duration-300 ${isDark ? 'text-[#a0a0a0]' : 'text-[#8b8b8b]'}`}>{org}</p>
-        </div>
+    <a href="https://www.credly.com/users/andriesh/" target="_blank" rel="noreferrer" className={`flex items-start gap-2 p-3 rounded-lg transition-colors duration-300 ${isDark ? 'bg-[#2a2a2a] hover:bg-[#3a3a3a]' : 'bg-[#f8f8f8] hover:bg-[#f0f0f0]'}`}>
+      <div className="flex-shrink-0 pt-px">
+        {badge ? <span className="text-lg">{badge}</span> : <img src="https://img.icons8.com/?size=96&id=imamZukNSZr3&format=png" alt="Credly" className="w-4 h-4" />}
       </div>
-      <a href="https://www.credly.com/users/andriesh/" target="_blank" rel="noreferrer" className="flex-shrink-0">
-        <img src="https://img.icons8.com/?size=96&id=imamZukNSZr3&format=png" alt="Credly" className="w-5 h-5" />
-      </a>
-    </div>
+      <div className="flex-1 min-w-0">
+        <h4 className={`font-semibold text-[13px] leading-snug transition-colors duration-300 ${isDark ? 'text-white' : 'text-[#141414]'}`}>{name}</h4>
+        <p className={`text-[11px] mt-0.5 transition-colors duration-300 ${isDark ? 'text-[#a0a0a0]' : 'text-[#8b8b8b]'}`}>{org}</p>
+      </div>
+    </a>
   )
 }
 
@@ -353,34 +350,13 @@ function ContactCard({ isDark, label, value, href }) {
 }
 
 function ContactForm({ isDark }) {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-
-  const handleChange = (e) => {
-    const { name, value } = e.target
-    setFormData(prev => ({ ...prev, [name]: value }))
-  }
-
-  const handleSubmit = (e) => {
-    setIsSubmitting(true)
-    // formsubmit.co will handle the form submission
-    // The form will POST to their endpoint and they'll send you the email
-  }
-
   return (
     <form 
-      action="https://formsubmit.co/andriesh.rusnac@gmail.com" 
+      action="https://api.web3forms.com/submit" 
       method="POST"
-      onSubmit={handleSubmit}
       className={`p-8 rounded-2xl transition-colors duration-300 ${isDark ? 'bg-[#2a2a2a] border border-[#3a3a3a]' : 'bg-[#f8f8f8] border border-[#e8e8e8]'}`}
     >
-      {/* honeypot field for spam protection */}
-      <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" name="access_key" value="4fcc5561-933c-47ea-abce-30e2da0d4f0e" />
       
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
         <div>
@@ -390,8 +366,6 @@ function ContactForm({ isDark }) {
           <input
             type="text"
             name="name"
-            value={formData.name}
-            onChange={handleChange}
             required
             placeholder="Your name"
             className={`w-full px-4 py-2 rounded-lg transition-colors duration-300 ${isDark ? 'bg-[#1a1a1a] border border-[#4a4a4a] text-white placeholder-[#808080] focus:border-blue-500' : 'bg-white border border-[#d0d0d0] text-[#141414] placeholder-[#a0a0a0] focus:border-blue-500'} focus:outline-none`}
@@ -404,8 +378,6 @@ function ContactForm({ isDark }) {
           <input
             type="email"
             name="email"
-            value={formData.email}
-            onChange={handleChange}
             required
             placeholder="your.email@example.com"
             className={`w-full px-4 py-2 rounded-lg transition-colors duration-300 ${isDark ? 'bg-[#1a1a1a] border border-[#4a4a4a] text-white placeholder-[#808080] focus:border-blue-500' : 'bg-white border border-[#d0d0d0] text-[#141414] placeholder-[#a0a0a0] focus:border-blue-500'} focus:outline-none`}
@@ -414,26 +386,10 @@ function ContactForm({ isDark }) {
       </div>
       <div className="mb-6">
         <label className={`block text-[14px] font-medium mb-2 transition-colors duration-300 ${isDark ? 'text-white' : 'text-[#141414]'}`}>
-          Subject
-        </label>
-        <input
-          type="text"
-          name="subject"
-          value={formData.subject}
-          onChange={handleChange}
-          required
-          placeholder="What is this about?"
-          className={`w-full px-4 py-2 rounded-lg transition-colors duration-300 ${isDark ? 'bg-[#1a1a1a] border border-[#4a4a4a] text-white placeholder-[#808080] focus:border-blue-500' : 'bg-white border border-[#d0d0d0] text-[#141414] placeholder-[#a0a0a0] focus:border-blue-500'} focus:outline-none`}
-        />
-      </div>
-      <div className="mb-6">
-        <label className={`block text-[14px] font-medium mb-2 transition-colors duration-300 ${isDark ? 'text-white' : 'text-[#141414]'}`}>
           Message
         </label>
         <textarea
           name="message"
-          value={formData.message}
-          onChange={handleChange}
           required
           placeholder="Your message here..."
           rows="5"
@@ -442,10 +398,9 @@ function ContactForm({ isDark }) {
       </div>
       <button
         type="submit"
-        disabled={isSubmitting}
-        className={`w-full py-3 rounded-lg font-medium transition-all ${isDark ? 'bg-blue-600 hover:bg-blue-700 disabled:bg-blue-800 text-white' : 'bg-blue-600 hover:bg-blue-700 disabled:bg-blue-800 text-white'}`}
+        className={`w-full py-3 rounded-lg font-medium transition-all ${isDark ? 'bg-blue-600 hover:bg-blue-700 text-white' : 'bg-blue-600 hover:bg-blue-700 text-white'}`}
       >
-        {isSubmitting ? 'Sending...' : 'Send Message'}
+        Send Message
       </button>
       <p className={`text-[12px] mt-4 text-center transition-colors duration-300 ${isDark ? 'text-[#a0a0a0]' : 'text-[#8b8b8b]'}`}>
         Your message will be sent directly to my email. I'll get back to you soon!
