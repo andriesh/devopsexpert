@@ -132,7 +132,7 @@ export default function App() {
                   <img src="https://img.icons8.com/?size=96&id=imamZukNSZr3&format=png" alt="Credly" className="w-5 h-5" />
                 </a>
                 <a href="https://www.cncf.io/training/kubestronaut/?_sft_lf-country=md&p=andrei-rusnac" target="_blank" rel="noreferrer" className={`w-12 h-12 rounded-xl flex items-center justify-center transition-all ${isDark ? 'bg-[#2a2a2a] border border-[#3a3a3a] hover:bg-[#3a3a3a] hover:border-[#4a4a4a]' : 'bg-white border border-[#e8e8e8] hover:bg-[#f8f8f8] hover:border-[#d0d0d0]'}`}>
-                  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z" fill="currentColor" className="text-blue-600"/></svg>
+                  <img src="https://avatars.githubusercontent.com/u/13455738?s=200&v=4" alt="CNCF" className="w-5 h-5 rounded" />
                 </a>
               </div>
             </div>
@@ -151,38 +151,35 @@ export default function App() {
                   Building scalable, observable and secure cloud-native platforms.
                 </p>
               </div>
+              
+              {/* Stack */}
+              <div className="mt-12">
+                <h3 className={`text-[18px] font-bold mb-6 transition-colors duration-300 ${isDark ? 'text-white' : 'text-[#141414]'}`}>Stack</h3>
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+                  <StackItem isDark={isDark} name="Kubernetes" />
+                  <StackItem isDark={isDark} name="Docker" />
+                  <StackItem isDark={isDark} name="Azure" />
+                  <StackItem isDark={isDark} name="Terraform" />
+                  <StackItem isDark={isDark} name="Prometheus" />
+                  <StackItem isDark={isDark} name="Grafana" />
+                  <StackItem isDark={isDark} name="ArgoCD" />
+                  <StackItem isDark={isDark} name="FluxCD" />
+                  <StackItem isDark={isDark} name="Ansible" />
+                  <StackItem isDark={isDark} name="Jenkins" />
+                  <StackItem isDark={isDark} name="GitHub Actions" />
+                  <StackItem isDark={isDark} name="Azure DevOps" />
+                  <StackItem isDark={isDark} name="Linux" />
+                  <StackItem isDark={isDark} name="Python" />
+                  <StackItem isDark={isDark} name="Bash" />
+                  <StackItem isDark={isDark} name="ELK Stack" />
+                  <StackItem isDark={isDark} name="MySQL" />
+                  <StackItem isDark={isDark} name="PostgreSQL" />
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </header>
-
-      {/* Stack Section */}
-      <section className={`py-20 transition-colors duration-300 ${isDark ? 'bg-[#0f0f0f]' : 'bg-[#f8f8f8]'}`}>
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className={`text-[32px] font-bold mb-12 transition-colors duration-300 ${isDark ? 'text-white' : 'text-[#141414]'}`}>Stack</h2>
-          
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
-            <StackItem isDark={isDark} name="Kubernetes" />
-            <StackItem isDark={isDark} name="Docker" />
-            <StackItem isDark={isDark} name="Azure" />
-            <StackItem isDark={isDark} name="Terraform" />
-            <StackItem isDark={isDark} name="Prometheus" />
-            <StackItem isDark={isDark} name="Grafana" />
-            <StackItem isDark={isDark} name="ArgoCD" />
-            <StackItem isDark={isDark} name="FluxCD" />
-            <StackItem isDark={isDark} name="Ansible" />
-            <StackItem isDark={isDark} name="Jenkins" />
-            <StackItem isDark={isDark} name="GitHub Actions" />
-            <StackItem isDark={isDark} name="Azure DevOps" />
-            <StackItem isDark={isDark} name="Linux" />
-            <StackItem isDark={isDark} name="Python" />
-            <StackItem isDark={isDark} name="Bash" />
-            <StackItem isDark={isDark} name="ELK Stack" />
-            <StackItem isDark={isDark} name="MySQL" />
-            <StackItem isDark={isDark} name="PostgreSQL" />
-          </div>
-        </div>
-      </section>
 
       {/* Experience Section */}
       <section className={`py-20 transition-colors duration-300 ${isDark ? 'bg-[#1a1a1a] border-t border-[#2a2a2a]' : 'bg-white border-t border-[#f0f0f0]'}`}>
