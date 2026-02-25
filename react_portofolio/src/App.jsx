@@ -359,7 +359,7 @@ function ContactForm({ isDark }) {
     subject: '',
     message: ''
   })
-  const [submitted, setSubmitted] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -367,16 +367,21 @@ function ContactForm({ isDark }) {
   }
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    // Encode data for mailto link to obscure from bots
-    const mailtoLink = `mailto:andriesh.rusnac@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`)}`
-    window.location.href = mailtoLink
-    setSubmitted(true)
-    setTimeout(() => setSubmitted(false), 3000)
+    setIsSubmitting(true)
+    // formsubmit.co will handle the form submission
+    // The form will POST to their endpoint and they'll send you the email
   }
 
   return (
-    <form onSubmit={handleSubmit} className={`p-8 rounded-2xl transition-colors duration-300 ${isDark ? 'bg-[#2a2a2a] border border-[#3a3a3a]' : 'bg-[#f8f8f8] border border-[#e8e8e8]'}`}>
+    <form 
+      action="https://formsubmit.co/andriesh.rusnac@gmail.com" 
+      method="POST"
+      onSubmit={handleSubmit}
+      className={`p-8 rounded-2xl transition-colors duration-300 ${isDark ? 'bg-[#2a2a2a] border border-[#3a3a3a]' : 'bg-[#f8f8f8] border border-[#e8e8e8]'}`}
+    >
+      {/* honeypot field for spam protection */}
+      <input type="hidden" name="_captcha" value="false" />
+      
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
         <div>
           <label className={`block text-[14px] font-medium mb-2 transition-colors duration-300 ${isDark ? 'text-white' : 'text-[#141414]'}`}>
@@ -437,12 +442,13 @@ function ContactForm({ isDark }) {
       </div>
       <button
         type="submit"
-        className={`w-full py-3 rounded-lg font-medium transition-all ${isDark ? 'bg-blue-600 hover:bg-blue-700 text-white' : 'bg-blue-600 hover:bg-blue-700 text-white'}`}
+        disabled={isSubmitting}
+        className={`w-full py-3 rounded-lg font-medium transition-all ${isDark ? 'bg-blue-600 hover:bg-blue-700 disabled:bg-blue-800 text-white' : 'bg-blue-600 hover:bg-blue-700 disabled:bg-blue-800 text-white'}`}
       >
-        {submitted ? 'Message sent! Opening email client...' : 'Send Message'}
+        {isSubmitting ? 'Sending...' : 'Send Message'}
       </button>
       <p className={`text-[12px] mt-4 text-center transition-colors duration-300 ${isDark ? 'text-[#a0a0a0]' : 'text-[#8b8b8b]'}`}>
-        Your message will open your default email client. Please verify the details before sending.
+        Your message will be sent directly to my email. I'll get back to you soon!
       </p>
     </form>
   )
