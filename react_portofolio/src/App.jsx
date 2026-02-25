@@ -84,8 +84,25 @@ export default function App() {
                     <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
                     <span className="text-emerald-400 text-[14px]">Available for work</span>
                   </div>
-                </div>
-              </div>
+                </div>                
+                {/* Languages */}
+                <div className="mt-6 pt-6 border-t border-[#3a3a3a] space-y-3">
+                  <h3 className="text-white font-bold text-[14px] uppercase tracking-wider">Languages</h3>
+                  <div className="space-y-2 text-left">
+                    <div>
+                      <p className="text-white font-medium text-[13px]">Romanian</p>
+                      <p className={`text-[12px] transition-colors duration-300 ${isDark ? 'text-[#a0a0a0]' : 'text-[#8b8b8b]'}`}>Native</p>
+                    </div>
+                    <div>
+                      <p className="text-white font-medium text-[13px]">English</p>
+                      <p className={`text-[12px] transition-colors duration-300 ${isDark ? 'text-[#a0a0a0]' : 'text-[#8b8b8b]'}`}>Professional</p>
+                    </div>
+                    <div>
+                      <p className="text-white font-medium text-[13px]">Russian</p>
+                      <p className={`text-[12px] transition-colors duration-300 ${isDark ? 'text-[#a0a0a0]' : 'text-[#8b8b8b]'}`}>Fluent</p>
+                    </div>
+                  </div>
+                </div>              </div>
               
               {/* Download CV */}
               <a href="/CV_Andrei_Rusnac_Visual.pdf" className={`mt-4 flex items-center justify-center gap-3 w-full py-4 rounded-2xl transition-all ${isDark ? 'bg-[#2a2a2a] text-white hover:bg-[#3a3a3a]' : 'bg-[#141414] text-white hover:bg-[#1f1f1f]'}`}>
@@ -94,10 +111,14 @@ export default function App() {
               </a>
               
               {/* Contact Email */}
-              <a href="mailto:andriesh.rusnac@gmail.com" className={`mt-3 flex items-center justify-center gap-3 w-full py-4 rounded-2xl transition-all ${isDark ? 'bg-[#2a2a2a] border border-[#3a3a3a] hover:bg-[#3a3a3a] text-white' : 'bg-white border border-[#e8e8e8] hover:bg-[#f8f8f8] text-[#141414]'}`}>
+              <button className={`mt-3 flex items-center justify-center gap-3 w-full py-4 rounded-2xl transition-all ${isDark ? 'bg-[#2a2a2a] border border-[#3a3a3a] hover:bg-[#3a3a3a] text-white' : 'bg-white border border-[#e8e8e8] hover:bg-[#f8f8f8] text-[#141414]'}`} onClick={() => {
+                const name = 'andriesh.rusnac';
+                const domain = 'gmail.com';
+                window.location.href = 'mailto:' + name + '@' + domain;
+              }}>
                 <svg className={`w-5 h-5 ${isDark ? 'text-white' : 'text-[#141414]'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
-                <span className="font-medium text-[14px]">andriesh.rusnac@gmail.com</span>
-              </a>
+                <span className="font-medium text-[14px]">Contact via Email</span>
+              </button>
               
               {/* Social Links */}
               <div className="mt-4 flex justify-center gap-3">
@@ -108,7 +129,7 @@ export default function App() {
                   <svg className={`w-5 h-5 ${isDark ? 'text-white' : 'text-[#141414]'}`} fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                 </a>
                 <a href="https://www.credly.com/users/andriesh/" target="_blank" rel="noreferrer" className={`w-12 h-12 rounded-xl flex items-center justify-center transition-all ${isDark ? 'bg-[#2a2a2a] border border-[#3a3a3a] hover:bg-[#3a3a3a] hover:border-[#4a4a4a]' : 'bg-white border border-[#e8e8e8] hover:bg-[#f8f8f8] hover:border-[#d0d0d0]'}`}>
-                  <svg className="w-5 h-5 text-[#ff6b00]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2c-.306 0-.612.098-.875.292l-8.75 6.219c-.525.373-.875.989-.875 1.65v8.678c0 1.1.9 2 2 2h17c1.1 0 2-.9 2-2v-8.678c0-.661-.35-1.277-.875-1.65l-8.75-6.219c-.263-.194-.569-.292-.875-.292zm0 3.5l6.25 4.44h-12.5L12 5.5z"/></svg>
+                  <img src="https://img.icons8.com/?size=96&id=imamZukNSZr3&format=png" alt="Credly" className="w-5 h-5" />
                 </a>
               </div>
             </div>
@@ -222,7 +243,7 @@ export default function App() {
           <h2 className={`text-[32px] font-bold mb-12 transition-colors duration-300 ${isDark ? 'text-white' : 'text-[#141414]'}`}>Certifications</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <CertCard isDark={isDark} name="Kubestronaut" org="CNCF" badge="🏆" />
+            <CertCard isDark={isDark} name="Golden Kubestronaut" org="CNCF" badge="🏆" />
             <CertCard isDark={isDark} name="Certified Kubernetes Administrator (CKA)" org="CNCF" />
             <CertCard isDark={isDark} name="Certified Kubernetes Application Developer (CKAD)" org="CNCF" />
             <CertCard isDark={isDark} name="Certified Kubernetes Security Specialist (CKS)" org="CNCF" />
@@ -234,26 +255,6 @@ export default function App() {
             <CertCard isDark={isDark} name="CCNA Security" org="Cisco" />
             <CertCard isDark={isDark} name="CCNA Wireless" org="Cisco" />
             <CertCard isDark={isDark} name="Linux Professional Institute (LPIC-1)" org="LPI" />
-          </div>
-        </div>
-      </section>
-
-      {/* Education Section */}
-      <section className={`py-20 transition-colors duration-300 ${isDark ? 'bg-[#0f0f0f]' : 'bg-[#f8f8f8]'}`}>
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className={`text-[32px] font-bold mb-12 transition-colors duration-300 ${isDark ? 'text-white' : 'text-[#141414]'}`}>Education</h2>
-          
-          <div className="space-y-6">
-            <EducationCard isDark={isDark}
-              degree="Licentiate Degree, Economics"
-              school="University of Applied Studies"
-              period="2009"
-            />
-            <EducationCard isDark={isDark}
-              degree="Networking Associate"
-              school="Academia Cisco"
-              period="2007"
-            />
           </div>
         </div>
       </section>
@@ -285,26 +286,6 @@ export default function App() {
               value="View Badges"
               href="https://www.credly.com/users/andriesh/"
             />
-          </div>
-        </div>
-      </section>
-
-      {/* Languages */}
-      <section className={`py-16 transition-colors duration-300 ${isDark ? 'bg-[#2a2a2a]' : 'bg-[#141414]'}`}>
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="flex flex-wrap justify-center gap-12 text-center">
-            <div>
-              <p className="text-white font-bold text-[18px]">Romanian</p>
-              <p className={`text-[14px] mt-1 transition-colors duration-300 ${isDark ? 'text-[#a0a0a0]' : 'text-[#8b8b8b]'}`}>Native</p>
-            </div>
-            <div>
-              <p className="text-white font-bold text-[18px]">English</p>
-              <p className={`text-[14px] mt-1 transition-colors duration-300 ${isDark ? 'text-[#a0a0a0]' : 'text-[#8b8b8b]'}`}>Professional</p>
-            </div>
-            <div>
-              <p className="text-white font-bold text-[18px]">Russian</p>
-              <p className={`text-[14px] mt-1 transition-colors duration-300 ${isDark ? 'text-[#a0a0a0]' : 'text-[#8b8b8b]'}`}>Fluent</p>
-            </div>
           </div>
         </div>
       </section>
@@ -357,21 +338,6 @@ function StackItem({ isDark, name }) {
   return (
     <div className={`flex items-center justify-center px-4 py-3 rounded-xl transition-all ${isDark ? 'bg-[#2a2a2a] border border-[#3a3a3a] hover:border-[#4a4a4a] hover:shadow-sm' : 'bg-white border border-[#e8e8e8] hover:border-[#d0d0d0] hover:shadow-sm'}`}>
       <span className={`font-medium text-[13px] transition-colors duration-300 ${isDark ? 'text-white' : 'text-[#141414]'}`}>{name}</span>
-    </div>
-  )
-}
-
-function EducationCard({ isDark, degree, school, period }) {
-  return (
-    <div className={`flex items-start gap-4 p-6 rounded-2xl transition-colors duration-300 ${isDark ? 'bg-[#2a2a2a] border border-[#3a3a3a]' : 'bg-white border border-[#e8e8e8]'}`}>
-      <div className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors duration-300 ${isDark ? 'bg-[#3a3a3a]' : 'bg-[#f8f8f8]'}`}>
-        <svg className={`w-6 h-6 transition-colors duration-300 ${isDark ? 'text-[#a0a0a0]' : 'text-[#8b8b8b]'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 14l9-5-9-5-9 5 9 5z" /><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" /></svg>
-      </div>
-      <div>
-        <h3 className={`text-[16px] font-bold transition-colors duration-300 ${isDark ? 'text-white' : 'text-[#141414]'}`}>{degree}</h3>
-        <p className={`text-[14px] mt-1 transition-colors duration-300 ${isDark ? 'text-[#a0a0a0]' : 'text-[#8b8b8b]'}`}>{school}</p>
-        <p className={`text-[13px] mt-1 transition-colors duration-300 ${isDark ? 'text-[#808080]' : 'text-[#b0b0b0]'}`}>{period}</p>
-      </div>
     </div>
   )
 }
